@@ -4,7 +4,30 @@
 
 # Run the auction example.
 cd auction
-echo "[CHECK] CHECKING THE AUCTION EXAMPLE"
+echo "
+
+
+[CHECK] CHECKING THE AUCTION EXAMPLE"
+chmod +x ./run.sh
+./run.sh
+cd ..
+
+# Run the tictactoe example.
+cd tictactoe
+echo "
+
+
+[CHECK] CHECKING THE TICTACTOE EXAMPLE"
+chmod +x ./run.sh
+./run.sh
+cd ..
+
+# Run the vote example.
+cd vote
+echo "
+
+
+[CHECK] CHECKING THE VOTE EXAMPLE"
 chmod +x ./run.sh
 ./run.sh
 cd ..
