@@ -55,7 +55,7 @@ Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vsc
 
 Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
 
-<details>
+<details>Next Steps
 
 #### Next, in Sublime Text, install [Package Control](https://packagecontrol.io):
 - On Windows/Linux: `ctrl + shift + p`, type **Install Package Control**, and press **Enter**.
