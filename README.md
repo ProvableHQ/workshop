@@ -56,9 +56,9 @@ Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vsc
 
 ### Sublime Text
 
-Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
-
 <details><summary>Installation Steps</summary>
+
+Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
 
 #### Next, in Sublime Text, install [Package Control](https://packagecontrol.io):
 - On Windows/Linux: `ctrl + shift + p`, type **Install Package Control**, and press **Enter**.
@@ -76,9 +76,9 @@ Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/st
 
 ### IntelliJ IDEA
 
-Start by installing `IntelliJ IDEA` with [bit.ly/start-intellij](https://bit.ly/start-intellij).
-
 <details><summary>Installation Steps</summary>
+
+Start by installing `IntelliJ IDEA` with [bit.ly/start-intellij](https://bit.ly/start-intellij).
 
 #### Next, in IntelliJ IDEA, open the **IntelliJ Marketplace** and select `Plugins`:
 - On Windows/Linux: `ctrl + ,` and select `Plugins` on the left hand bar
