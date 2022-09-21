@@ -55,6 +55,8 @@ Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vsc
 
 Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
 
+<details>
+
 #### Next, in Sublime Text, install [Package Control](https://packagecontrol.io):
 - On Windows/Linux: `ctrl + shift + p`, type **Install Package Control**, and press **Enter**.
 - On macOS: `cmd + shift + p`, type **Install Package Control**, and press **Enter**.
@@ -66,6 +68,8 @@ Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/st
 #### Lastly, in Sublime Text, install [LSP-leo](https://packagecontrol.io/packages/LSP-leo):
 - On Windows/Linux: `ctrl + shift + p`, select **Package Control: Install Package**, type **LSP-leo**, and press **Enter**.
 - On macOS: `cmd + shift + p`, select **Package Control: Install Package**, type **LSP-leo**, and press **Enter**.
+
+</details>
 
 ### IntelliJ IDEA
 
