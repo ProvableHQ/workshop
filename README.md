@@ -10,6 +10,13 @@
 - [Build Guide](#build-guide)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
+- [Application Walkthroughs](#application-walkthroughs)
+    - [Auction](#auction)
+    - [Basic Bank](#basic-bank)
+    - [Battleship](#battleship)
+    - [Tic-Tic-Toe](#tic-tac-toe)
+    - [Token](#token)
+    - [Vote](#vote)
 
 ## Build Guide
 
@@ -29,3 +36,25 @@ To install Aleo and Leo, run:
 ```
 ./install.sh
 ```
+
+## Application Walkthroughs
+
+This workshop walks through the following applications:
+- [auction](./auction/)
+- [basic_bank](./basic_bank/)
+- [battleship](./battleship/)
+- [tictactoe](./tictactoe/)
+- [token](./token)
+- [vote](./vote/)
+
+### Auction
+
+### Basic Bank
+
+### Battleship
+
+### Tic-Tac-Toe
+
+### Token
+
+### Vote
