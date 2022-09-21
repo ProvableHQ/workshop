@@ -1,4 +1,5 @@
-# 🗳️ Vote
+<!-- # 🗳️ Vote -->
+<img alt="workshop/vote" width="1412" src="../.resources/vote.png">
 
 ## Summary
 
