@@ -12,12 +12,12 @@ chmod +x ./run.sh
 ./run.sh
 cd ..
 
-# Run the broken bank example.
-cd broken_bank
+# Run the basic bank example.
+cd basic_bank
 echo "
 
 
-[CHECK] CHECKING THE BROKEN BANK EXAMPLE"
+[CHECK] CHECKING THE BASIC BANK EXAMPLE"
 chmod +x ./run.sh
 ./run.sh
 cd ..
