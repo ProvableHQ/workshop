@@ -1,4 +1,5 @@
-<h1 align="center">Aleo Workshop</h1>
+<!-- <h1 align="center">Aleo Workshop</h1> -->
+<img alt="snarkVM" width="1412" src="./.resources/readme.png">
 <h3 align="center">📜 A starter guide to build applications on Aleo 📜</h3>
 
 <p align="center">
