@@ -9,6 +9,7 @@
 ## Table of Contents
 - [Build Guide](#build-guide)
     - [Prerequisites](#prerequisites)
+    - [IDE Support](#ide-support)
     - [Installation](#installation)
 - [Application Walkthroughs](#application-walkthroughs)
     - [🏛️ Auction](#🏛️-auction) ([Source Code](./auction/))
@@ -28,7 +29,46 @@ This workshop repository requires the following prerequisites.
 
 - Install `git` with [bit.ly/start-git](https://bit.ly/start-git)
 - Install `Rust`with [bit.ly/start-rust](https://bit.ly/start-rust)
-- Install `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vscode)
+
+### IDE Support
+
+This workshop repository also requires one of the following IDEs.
+- [VSCode](https://bit.ly/start-vscode)
+- [Sublime Text](https://bit.ly/start-sublime)
+- [IntelliJ IDEA](https://bit.ly/start-intellij)
+
+#### VSCode
+
+Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vscode).
+
+Next, in VSCode, open the **VSCode Marketplace**, type **Leo** into the search bar, and proceed to install the Leo plugin.
+![Leo VSCode](./.resources/leo-vscode.png)
+
+#### Sublime Text
+
+Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
+
+Next, in Sublime Text, install [Package Control](https://packagecontrol.io):
+- On Windows/Linux: `ctrl + shift + p`, type **Install Package Control**, and press **Enter**.
+- On macOS: `cmd + shift + p`, type **Install Package Control**, and press **Enter**.
+
+Next, in Sublime Text, install [LSP](https://packagecontrol.io/packages/LSP):
+- On Windows/Linux: `ctrl + shift + p`, select **Package Control: Install Package**, type **LSP**, and press **Enter**.
+- On macOS: `cmd + shift + p`, select **Package Control: Install Package**, type **LSP**, and press **Enter**.
+
+Lastly, in Sublime Text, install [LSP-leo](https://packagecontrol.io/packages/LSP-leo):
+- On Windows/Linux: `ctrl + shift + p`, select **Package Control: Install Package**, type **LSP-leo**, and press **Enter**.
+- On macOS: `cmd + shift + p`, select **Package Control: Install Package**, type **LSP-leo**, and press **Enter**.
+
+#### IntelliJ IDEA
+
+Start by installing `IntelliJ IDEA` with [bit.ly/start-intellij](https://bit.ly/start-intellij).
+
+Next, in IntelliJ IDEA, open the **IntelliJ Marketplace** and select `Plugins`:
+- On Windows/Linux: `ctrl + ,` and select `Plugins` on the left hand bar
+- On macOS: `cmd + ,` and select `Plugins` on the left hand bar
+
+Lastly, type **Leo** into the search bar, and install the official Leo plugin.
 
 ### Installation
 
