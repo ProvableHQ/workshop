@@ -25,7 +25,7 @@ The following steps will install Aleo and Leo on your machine. This workshop is 
 
 ### Prerequisites
 
-This workshop repository requires the following prerequisites.
+This workshop requires the following prerequisites.
 
 - Install `git` with [bit.ly/start-git](https://bit.ly/start-git)
 - Install `Rust`with [bit.ly/start-rust](https://bit.ly/start-rust)
@@ -39,7 +39,7 @@ To install Aleo and Leo, run:
 
 ## IDE Support
 
-This workshop repository also requires one of the following IDEs.
+This workshop requires one of the following IDEs.
 - [VSCode](https://bit.ly/start-vscode)
 - [Sublime Text](https://bit.ly/start-sublime)
 - [IntelliJ IDEA](https://bit.ly/start-intellij)
