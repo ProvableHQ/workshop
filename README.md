@@ -13,7 +13,7 @@
 
 ## Build Guide
 
-The following steps are to install Aleo and Leo on your machine.
+The following steps will install Aleo and Leo on your machine. This workshop is compatible on macOS, Linux, and Windows machines.
 
 ### Prerequisites
 
