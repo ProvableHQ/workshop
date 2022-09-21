@@ -8,7 +8,7 @@ fi
 
 # Follow along in the README.md for a detailed explanation of each step.
 
-# 1. Initialize Player 1.
+# 1: Initializing Player 1
 echo "
 ###############################################################################
 ########                                                               ########
@@ -30,7 +30,7 @@ echo "{
 
 echo "✅ Successfully initialized Player 1."
 
-# 2. Setup Player 1's Board.
+# 2: Player 1 Places Ships On The Board
 echo "
 ###############################################################################
 ########                                                               ########
@@ -43,7 +43,7 @@ leo run initialize_board 34084860461056u64 551911718912u64 7u64 1157425104234217
 echo "
 ✅ Successfully initialized Player 1's board."
 
-# 3. Pass the board to Player 2.
+# 3: Player 1 Passes The Board To Player 2
 echo "
 ###############################################################################
 ########                                                               ########
@@ -65,7 +65,7 @@ leo run offer_battleship '{
 echo "
 ✅ Successfully passed the board to Player 2."
 
-# 4. Setup Player 2's Board
+# 4: Player 2 Places Ships On The Board
 echo "
 ###############################################################################
 ########                                                               ########
@@ -91,7 +91,7 @@ echo "
 echo "
 ✅ Successfully initialized Player 2's board."
 
-# 5. Pass to Player 1
+# 5: Passing The Board Back To Player 1
 echo "
 ###############################################################################
 ########                                                               ########
@@ -122,7 +122,7 @@ leo run start_battleship '{
 echo "
 ✅ Successfully passed the board back to Player 1."
 
-# 6. Player 1 Shoots First
+# 6: Player 1 Takes The 1st Turn
 echo "
 ###############################################################################
 ########                                                               ########
@@ -166,7 +166,7 @@ echo "
 echo "
 ✅ Successfully executed Player 1's turn."
 
-# 7. Player 2 Shoots Second
+# 7: Player 2 Takes The 2nd Turn
 echo "
 ###############################################################################
 ########                                                               ########
@@ -210,7 +210,7 @@ echo "
 echo "
 ✅ Successfully executed Player 2's turn."
 
-# 8. Player 1 Shoots Third
+# 8: Player 1 Takes The 3rd Turn
 echo "
 ###############################################################################
 ########                                                               ########
@@ -254,11 +254,11 @@ echo "
 echo "
 ✅ Successfully executed Player 1's turn."
 
-# 9. Player 2 Shoots Fourth
+# 9: Player 2 Takes The 4th Turn
 echo "
 ###############################################################################
 ########                                                               ########
-########               STEP 9: Player 1 Takes The 4th Turn             ########
+########               STEP 9: Player 2 Takes The 4th Turn             ########
 ########                                                               ########
 ###############################################################################
 "

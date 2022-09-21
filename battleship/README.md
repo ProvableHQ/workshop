@@ -1,18 +1,17 @@
-<!-- # 🏴‍☠️ Battleship  -->
-<img alt="workshop/battleship" width="1412" src="../.resources/battleship.png">
+# Leo Battleship 🏴‍☠️
 
 - [Summary](#summary)
 - [Build](#how-to-build)
 - [Run](#how-to-run)
-  - [1. Setup](#1-setup)
-  - [2. Select Player 1's Board](#2-select-player-1s-board)
-  - [3. Pass to Player 2](#3-pass-to-player-2)
-  - [4. Select Player 2's Board](#4-select-player-2s-board)
-  - [5. Pass to Player 1](#5-pass-to-player-1)
-  - [6. Player 1 Shoots First](#6-player-1-shoots-first)
-  - [7. Player 2 Shoots Second](#7-player-2-shoots-second)
-  - [8. Player 1 Shoots Third](#8-player-1-shoots-third)
-  - [9. Player 2 Shoots Fourth](#9-player-2-shoots-fourth)
+  - [1. Initializing the Players](#1-initializing-the-players)
+  - [2: Player 1 Places Ships On The Board](#2-player-1-places-ships-on-the-board)
+  - [3: Player 1 Passes The Board To Player 2](#3-player-1-passes-the-board-to-player-2)
+  - [4: Player 2 Places Ships On The Board](#4-player-2-places-ships-on-the-board)
+  - [5: Passing The Board Back To Player 1](#5-passing-the-board-back-to-player-1)
+  - [6: Player 1 Takes The 1st Turn](#6-player-1-takes-the-1st-turn)
+  - [7: Player 2 Takes The 2nd Turn](#7-player-2-takes-the-2nd-turn)
+  - [8: Player 1 Takes The 3rd Turn](#8-player-1-takes-the-3rd-turn)
+  - [9: Player 2 Takes The 4th Turn](#9-player-2-takes-the-4th-turn)
   - [10. Who Wins?](#10-who-wins)
 - [ZK Battleship Privacy](#zk-battleship-privacy)
 - [Modeling the Boards and Ships](#modeling-the-board-and-ships)
@@ -24,8 +23,8 @@
 - [Winning](#winning-the-game)
 
 # Summary
-Battleship is a game where two players lay their ships into secret configurations on their respective 8x8 grids, 
-and then take turns firing upon each other's board. 
+Battleship is a game where two players lay their ships into secret configurations on their respective 8x8 grids,
+and then take turns firing upon each other's board.
 The game ends when one player has sunk all of the other player's ships.
 
 This application was translated into Leo from the [zk-battleship](https://github.com/demox-labs/zk-battleship) example written by the Aleo community - show them some love!
@@ -38,12 +37,11 @@ leo build
 ```
 
 ## How to Run
-<details><summary>Commands and Playing the Game</summary>
+<details open><summary>Commands and Playing the Game</summary>
 
-
-### 1. Setup
+### 1. Initializing the Players
 In order to play battleship, there must be two players with two boards.
-Players will be represented by their Aleo address. 
+Players will be represented by their Aleo address.
 You can use the provided player accounts or [generate your own](https://aleohq.github.io/aleo/).
 ```markdown
 Player 1:
@@ -73,10 +71,10 @@ Save the keys and addresses. Set the `program.json` private_key and address to o
 }
 ```
 
-### 2. Select Player 1's Board
-Now, we need to make a board as Player 1. 
-See the [modeling the boards and ships](#modeling-the-board-and-ships) section for information on valid ship bitstrings and placements on the board. 
-For this example, we will be using sample valid inputs. 
+### 2. Player 1 Places Ships on the Board
+Now, we need to make a board as Player 1.
+See the [modeling the boards and ships](#modeling-the-board-and-ships) section for information on valid ship bitstrings and placements on the board.
+For this example, we will be using sample valid inputs.
 Initialize a new board as Player 1 with valid ship inputs and Player 2's address: `leo run initialize_board ship_5_bitstring ship_4_bitstring ship_3_bitstring ship_2_bitstring player_2_address`
 
 **Run**
@@ -102,9 +100,9 @@ leo run initialize_board 34084860461056u64 551911718912u64 7u64 1157425104234217
 ✅ Executed 'battleship.aleo/initialize_board'
 ```
 
-The output is a board_state record owned by Player 1. 
-Notice that the `game_started` flag is false, as well as the composite ship configuration `ships`. 
-1157459741006397447u64 to a binary bitstring becomes `0001000000010000000111111000000010000000100000001000000000000111`, 
+The output is a board_state record owned by Player 1.
+Notice that the `game_started` flag is false, as well as the composite ship configuration `ships`.
+1157459741006397447u64 to a binary bitstring becomes `0001000000010000000111111000000010000000100000001000000000000111`,
 or laid out in columns and rows:
 ```
 0 0 0 1 0 0 0 0
@@ -117,7 +115,7 @@ or laid out in columns and rows:
 0 0 0 0 0 1 1 1
 ```
 
-### 3. Pass to Player 2
+### 3: Player 1 Passes The Board To Player 2
 Now, we can offer a battleship game to player 2. Run `leo run offer_battleship 'board_state.record'` with the record you just created:
 **Run**
 ```
@@ -162,16 +160,16 @@ leo run offer_battleship '{
 ✅ Executed 'battleship.aleo/offer_battleship'
 ```
 
-The first output record is the udpated board_state.record. 
-Notice the `game_started` flag is now true. 
-This board cannot be used to offer any other battleship games or accept any battleship game offers. 
-Player 1 would need to initialize a new board and use that instead. 
-The second output record is a dummy move.record -- 
-there are no fire coordinates included to play on Player 2's board, 
-and no information about any previous Player 2 moves (Player 2 has not made any moves yet). 
+The first output record is the udpated board_state.record.
+Notice the `game_started` flag is now true.
+This board cannot be used to offer any other battleship games or accept any battleship game offers.
+Player 1 would need to initialize a new board and use that instead.
+The second output record is a dummy move.record --
+there are no fire coordinates included to play on Player 2's board,
+and no information about any previous Player 2 moves (Player 2 has not made any moves yet).
 This move.record is owned by Player 2, who must use that in combination with their own board_state.record to accept the game. Let's do that now.
 
-### 4. Select Player 2's Board
+### 4: Player 2 Places Ships On The Board
 We must run the program as Player 2 now, so switch the `program.json` file to use Player 2's keys:
 ```json
 {
@@ -223,7 +221,7 @@ Note, the output ships here is 9044591273705727u64, which in a bitstring is:
 1 1 1 1 1 1 1 1
 ```
 
-### 5. Pass to Player 1
+### 5: Passing The Board Back To Player 1
 Now, we can accept Player 1's offer. Run `leo run start_battleship 'board_state.record' 'move.record'`:
 **Run**
 ```bash
@@ -276,12 +274,12 @@ leo run start_battleship '{
 ✅ Executed 'battleship.aleo/start_battleship'
 ```
 
-Notice the outputs here are similar to `offer_battleship`. 
-A dummy move.record is owned by Player 1, and Player 2 gets a board_state.record with the `game_started` flag updated. 
-However, now that Player 1 has a move.record and a started board, they can begin to play. 
+Notice the outputs here are similar to `offer_battleship`.
+A dummy move.record is owned by Player 1, and Player 2 gets a board_state.record with the `game_started` flag updated.
+However, now that Player 1 has a move.record and a started board, they can begin to play.
 
-### 6. Player 1 Shoots First
-**Switch** `program.json`'s keys back to Player 1's. 
+### 6: Player 1 Takes The 1st Turn
+**Switch** `program.json`'s keys back to Player 1's.
 Player 1 now makes the first real move: `leo run play 'board_state.record' 'move.record' fire_coordinate`
 
 **Run**
@@ -334,13 +332,13 @@ leo run play '{
 ✅ Executed 'battleship.aleo/play'
 ```
 
-Player 1 has an updated board_state.record -- they have a new `played_tiles` bitstring, 
-which corresponds to the fire coordinate they just sent to Player 2. 
-You can see that the `incoming_fire_coordinate` in the move.record owned by Player 2 matches exactly the input given by Player 1. 
-Player 2 can now play this move tile and respond with a fire coordinate of their own, 
-and they will also let Player 1 know whether or not Player 1's fire coordinate hit or miss Player 2's ships.
+Player 1 has an updated board_state.record -- they have a new `played_tiles` bitstring,
+which corresponds to the fire coordinate they just sent to Player 2.
+You can see that the `incoming_fire_coordinate` in the move.record owned by Player 2 matches exactly the input given by Player 1.
+Player 2 can now play this move tile and respond with a fire coordinate of their own,
+and they will also let Player 1 know whether their fire coordinate hit or miss Player 2's ships.
 
-### 7. Player 2 Shoots Second
+### 7: Player 2 Takes The 2nd Turn
 **Switch** `program.json` to Player 2's keys. Player 2 makes their move:
 
 **Run**
@@ -395,22 +393,22 @@ leo run play '{
 ✅ Executed 'battleship.aleo/play'
 ```
 
-Player 2 now has an updated board_state.record which includes their newly updated `played_tiles`, 
-only containing the fire coordinate they just sent to Player 1. 
-Player 1 now owns a new move.record which includes the `hits_and_misses` field. 
-This contains only the result of Player 1's previous fire coordinate they had sent to Player 2. 
-It will always be a single coordinate on the 8x8 grid if it's a hit. A miss is 0u64 (8x8 grid of 0s), 
-whereas a hit is the u64 equivalent of their previous fire coordinate in bitstring form. 
-If you check Player 2's ships configuration, you'll note their entire bottom row is covered by two ships, 
-so sample valid hits on the bottom row would be: 1u64, 2u64, 4u64, 8u64, 16u64, 32u64, 64u64, and 128u64. 
+Player 2 now has an updated board_state.record which includes their newly updated `played_tiles`,
+only containing the fire coordinate they just sent to Player 1.
+Player 1 now owns a new move.record which includes the `hits_and_misses` field.
+This contains only the result of Player 1's previous fire coordinate they had sent to Player 2.
+It will always be a single coordinate on the 8x8 grid if it's a hit. A miss is 0u64 (8x8 grid of 0s),
+whereas a hit is the u64 equivalent of their previous fire coordinate in bitstring form.
+If you check Player 2's ships configuration, you'll note their entire bottom row is covered by two ships,
+so sample valid hits on the bottom row would be: 1u64, 2u64, 4u64, 8u64, 16u64, 32u64, 64u64, and 128u64.
 Since Player 1's first fire coordinate (1u64) was a hit, the `hits_and_misses` field is also 1u64.
 
-Player 1's next move will consume this move.record, which will update Player 1's board with the hit-or-miss, 
-as well as figure out the result of Player 2's fire coordinate. 
-Now that Player 1 has some `played_tiles`, they can no longer choose an alread-played fire coordinate. 
+Player 1's next move will consume this move.record, which will update Player 1's board with the hit-or-miss,
+as well as figure out the result of Player 2's fire coordinate.
+Now that Player 1 has some `played_tiles`, they can no longer choose an alread-played fire coordinate.
 For example, running `aleo run play 'board_state.record' 'move.record' 1u64` will fail, because 1u64 has already been played.
 
-### 8. Player 1 Shoots Third
+### 8: Player 1 Takes The 3rd Turn
 **Switch** `program.json` to use Player 1's keys.
 
 **Run**
@@ -464,7 +462,7 @@ leo run play '{
 ✅ Executed 'battleship.aleo/play'
 ```
 
-As before, both a board_state.record and move.record are created. 
+As before, both a board_state.record and move.record are created.
 The board_state.record now contains 3u64 as the `played_tiles`, which looks like this in bitstring form:
 ```
 0 0 0 0 0 0 0 0
@@ -479,7 +477,7 @@ The board_state.record now contains 3u64 as the `played_tiles`, which looks like
 
 The board_state.record `hits_and_misses` field has also been updated with the result of their previous move. The new move.record owned by Player 2 now contains information about whether Player 2's previous move was a hit or miss, as well as Player 1's new fire coordinate.
 
-### 9. Player 2 Shoots Fourth
+### 9: Player 2 Takes The 4th Turn
 **Switch** `program.json`'s keys to Player 2. Player 2 makes their next move:
 
 **Run**
@@ -534,15 +532,15 @@ leo run play '{
 ```
 
 ### 10. Who Wins?
-Play continues back and forth between Player 1 and Player 2. 
-When one player has a total of 14 flipped bits in their `hits_and_misses` field on their board_state.record, 
+Play continues back and forth between Player 1 and Player 2.
+When one player has a total of 14 flipped bits in their `hits_and_misses` field on their board_state.record,
 they have won the game.
 </details>
 
 ## ZK Battleship Privacy
 
-How can we ensure that the ship configurations of each player remains secret, 
-while being able to trustlessly and fairly play with their opponent? 
+How can we ensure that the ship configurations of each player remains secret,
+while being able to trustlessly and fairly play with their opponent?
 By taking advantage of selective privacy powered by zero knowledge proofs on Aleo.
 
 Broadly speaking, we can follow this general strategy:
@@ -671,7 +669,7 @@ Ships splitting across rows and columns:
 ```
 </details>
 
-Given these rules, our strategy will be to validate each individaul ship bitstring placement on a board, and then, if all the ships are valid, compose all the positions onto a board and validate that the board with all ships are valid. If each individual ship's position is valid, then all the ships together should be valid unless any overlapping occurs.
+Given these rules, our strategy will be to validate each individual ship bitstring placement on a board, and then, if all the ships are valid, compose all the positions onto a board and validate that the board with all ships are valid. If each individual ship's position is valid, then all the ships together should be valid unless any overlapping occurs.
 
 ## Validating a single ship at a time
 
