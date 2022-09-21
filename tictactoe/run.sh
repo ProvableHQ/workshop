@@ -8,8 +8,6 @@ fi
 
 # Create a new game.
 echo "
-
-
 Creating a new game."
 leo run new
 
