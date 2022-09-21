@@ -11,6 +11,9 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [IDE Support](#ide-support)
+    - [VSCode](#vscode-preferred)
+    - [Sublime Text](#sublime-text)
+    - [IntelliJ IDEA](#intellij-idea)
 - [Application Walkthroughs](#application-walkthroughs)
     - [🏛️ Auction](#🏛️-auction) ([Source Code](./auction/))
     - [🏦 Basic Bank](#🏦-basic-bank) ([Source Code](./basic_bank/))
@@ -44,16 +47,12 @@ This workshop requires one of the following IDEs.
 - [Sublime Text](https://bit.ly/start-sublime)
 - [IntelliJ IDEA](https://bit.ly/start-intellij)
 
-### VSCode
+### VSCode (Preferred)
 
 Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vscode).
 
-<details><summary>Installation Steps</summary>
-
 #### Next, in VSCode, open the **VSCode Marketplace**, type **Leo** into the search bar, and proceed to install the Leo plugin.
 ![Leo VSCode](./.resources/leo-vscode.png)
-
-</details>
 
 ### Sublime Text
 
