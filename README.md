@@ -17,6 +17,8 @@ The following steps are to install Aleo and Leo on your machine.
 
 ### Prerequisites
 
+This workshop repository requires the following prerequisites.
+
 - Install `git` with [bit.ly/start-git](https://bit.ly/start-git)
 - Install `Rust`with [bit.ly/start-rust](https://bit.ly/start-rust)
 - Install `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vscode)
