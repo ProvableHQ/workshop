@@ -61,7 +61,7 @@ and can only be used(voted) by the ticket `owner`.
 Run `new_ticket`:
 
 ```
-aleo run new_ticket
+leo run new_ticket
 ```
 
 Output sample:
