@@ -1,6 +1,6 @@
-# Tic Tac Toe
+# Tic-Tac-Toe
 
-A simple Tic Tac Toe game written in Leo.
+A standard game of Tic-Tac-Toe in Leo.
 
 ## Representing State
 Leo allows users to define composite data types with the `circuit` keyword. 

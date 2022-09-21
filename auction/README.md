@@ -1,6 +1,6 @@
 # Blind Auction
 
-An auction application written in Leo.
+A first-price sealed-bid auction in Leo.
 
 ## Summary
 

@@ -40,21 +40,9 @@ To install Aleo and Leo, run:
 ## Application Walkthroughs
 
 This workshop walks through the following applications:
-- [auction](./auction/)
-- [basic_bank](./basic_bank/)
-- [battleship](./battleship/)
-- [tictactoe](./tictactoe/)
-- [token](./token)
-- [vote](./vote/)
-
-### Auction
-
-### Basic Bank
-
-### Battleship
-
-### Tic-Tac-Toe
-
-### Token
-
-### Vote
+- [auction](./auction/) - A first-price sealed-bid auction in Leo
+- [basic_bank](./basic_bank/) - A simple-interest yielding bank account in Leo
+- [battleship](./battleship/)- A two-player game of Battleship in Leo
+- [tictactoe](./tictactoe/) - A standard game of Tic-Tac-Toe in Leo
+- [token](./token) - A transparent & shielded custom token in Leo
+- [vote](./vote/) - A ballot voting example in Leo
