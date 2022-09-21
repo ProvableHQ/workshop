@@ -1,5 +1,5 @@
 <!-- <h1 align="center">Aleo Workshop</h1> -->
-<img alt="snarkVM" width="1412" src="./.resources/readme.png">
+<img alt="workshop" width="1412" src="./.resources/readme.png">
 <h3 align="center">📜 A starter guide to build applications on Aleo 📜</h3>
 
 <p align="center">
@@ -16,12 +16,12 @@
     - [Sublime Text](#sublime-text)
     - [IntelliJ IDEA](#intellij-idea)
 - [Application Walkthroughs](#application-walkthroughs)
-    - [🏛️ Auction](#🏛️-auction) ([Source Code](./auction/))
-    - [🏦 Basic Bank](#🏦-basic-bank) ([Source Code](./basic_bank/))
-    - [🛳️ Battleship](#🛳️-battleship) ([Source Code](./battleship/))
-    - [⭕ Tic-Tic-Toe](#⭕-tic-tac-toe) ([Source Code](./tictactoe/))
-    - [🪙 Token](#🪙-token) ([Source Code](./token))
-    - [🗳️ Vote](#🗳️-vote) ([Source Code](./vote/))
+    - [🏛️ Auction](#-auction) ([Source Code](./auction/))
+    - [🏦 Basic Bank](#-basic-bank) ([Source Code](./basic_bank/))
+    - [🛳️ Battleship](#-battleship) ([Source Code](./battleship/))
+    - [⭕ Tic-Tic-Toe](#-tic-tac-toe) ([Source Code](./tictactoe/))
+    - [🪙 Token](#-token) ([Source Code](./token))
+    - [🗳️ Vote](#-vote) ([Source Code](./vote/))
 
 ## Build Guide
 
