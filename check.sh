@@ -12,6 +12,16 @@ chmod +x ./run.sh
 ./run.sh
 cd ..
 
+# Run the broken bank example.
+cd broken_bank
+echo "
+
+
+[CHECK] CHECKING THE BROKEN BANK EXAMPLE"
+chmod +x ./run.sh
+./run.sh
+cd ..
+
 # Run the tictactoe example.
 cd tictactoe
 echo "
