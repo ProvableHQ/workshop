@@ -52,4 +52,5 @@ Step 3: Installing Leo..."
 cd leo && cargo install --path . && cd ..
 
 echo "
-Installation complete. Open a new Terminal to begin."
+Installation complete. Open a new Terminal to begin.
+"
