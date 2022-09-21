@@ -1,4 +1,4 @@
-# Leo Vote
+# 🗳️ Vote
 
 ## Summary
 

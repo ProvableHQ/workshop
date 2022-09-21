@@ -1,4 +1,4 @@
-# Leo Battleship 🏴‍☠️
+# 🏴‍☠️ Battleship 
 
 - [Summary](#summary)
 - [Build](#how-to-build)

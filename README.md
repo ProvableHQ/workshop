@@ -11,12 +11,12 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Application Walkthroughs](#application-walkthroughs)
-    - [Auction](#auction) ([Source Code](./auction/))
-    - [Basic Bank](#basic-bank) ([Source Code](./basic_bank/))
-    - [Battleship](#battleship) ([Source Code](./battleship/))
-    - [Tic-Tic-Toe](#tic-tac-toe) ([Source Code](./tictactoe/))
-    - [Token](#token) ([Source Code](./token))
-    - [Vote](#vote) ([Source Code](./vote/))
+    - [🏛️ Auction](#🏛️-auction) ([Source Code](./auction/))
+    - [🏦 Basic Bank](#🏦-basic-bank) ([Source Code](./basic_bank/))
+    - [🛳️ Battleship](#🛳️-battleship) ([Source Code](./battleship/))
+    - [⭕ Tic-Tic-Toe](#⭕-tic-tac-toe) ([Source Code](./tictactoe/))
+    - [🪙 Token](#🪙-token) ([Source Code](./token))
+    - [🗳️ Vote](#🗳️-vote) ([Source Code](./vote/))
 
 ## Build Guide
 
@@ -47,7 +47,7 @@ This workshop walks through the following applications:
 - [token](./token) - A transparent & shielded custom token in Leo
 - [vote](./vote/) - A ballot voting example in Leo
 
-### Auction
+### 🏛️ Auction
 
 A first-price sealed-bid auction in Leo.
 
@@ -56,7 +56,7 @@ To see the auction example, run:
 cd auction && ./run.sh
 ```
 
-### Basic Bank
+### 🏦 Basic Bank
 
 A simple-interest yielding bank account in Leo.
 
@@ -65,7 +65,7 @@ To see the basic bank example, run:
 cd basic_bank && ./run.sh
 ```
 
-### Battleship
+### 🛳️ Battleship
 
 A two-player game of Battleship in Leo.
 
@@ -74,7 +74,7 @@ To see a game of Battleship between two players, run:
 cd battleship && ./run.sh
 ```
 
-### Tic-Tac-Toe
+### ⭕ Tic-Tac-Toe
 
 A standard game of Tic-Tac-Toe in Leo.
 
@@ -83,7 +83,7 @@ To see a game of Tic-Tac-Toe between two players, run:
 cd tictactoe && ./run.sh
 ```
 
-### Token
+### 🪙 Token
 
 A transparent & shielded custom token in Leo.
 
@@ -92,7 +92,7 @@ To see an example of minting and transfering tokens, run:
 cd token && ./run.sh
 ```
 
-### Vote
+### 🗳️ Vote
 
 A ballot voting example in Leo.
 

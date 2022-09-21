@@ -1,4 +1,4 @@
-# Blind Auction
+# 🏛️ Blind Auction
 
 A first-price sealed-bid auction in Leo.
 
