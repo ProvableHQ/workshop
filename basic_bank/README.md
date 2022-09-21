@@ -1,6 +1,6 @@
-# Broken Bank
+# Basic Bank
 
-A "broken" bank written in Leo.
+A basic bank written in Leo.
 
 ## Summary
 
