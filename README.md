@@ -48,14 +48,18 @@ This workshop requires one of the following IDEs.
 
 Start by installing `VSCode` with [bit.ly/start-vscode](https://bit.ly/start-vscode).
 
+<details><summary>Installation Steps</summary>
+
 #### Next, in VSCode, open the **VSCode Marketplace**, type **Leo** into the search bar, and proceed to install the Leo plugin.
 ![Leo VSCode](./.resources/leo-vscode.png)
+
+</details>
 
 ### Sublime Text
 
 Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/start-sublime).
 
-<details>Next Steps
+<details><summary>Installation Steps</summary>
 
 #### Next, in Sublime Text, install [Package Control](https://packagecontrol.io):
 - On Windows/Linux: `ctrl + shift + p`, type **Install Package Control**, and press **Enter**.
@@ -75,11 +79,15 @@ Start by installing `Sublime Text` with [bit.ly/start-sublime](https://bit.ly/st
 
 Start by installing `IntelliJ IDEA` with [bit.ly/start-intellij](https://bit.ly/start-intellij).
 
+<details><summary>Installation Steps</summary>
+
 #### Next, in IntelliJ IDEA, open the **IntelliJ Marketplace** and select `Plugins`:
 - On Windows/Linux: `ctrl + ,` and select `Plugins` on the left hand bar
 - On macOS: `cmd + ,` and select `Plugins` on the left hand bar
 
 Lastly, type **Leo** into the search bar, and install the official Leo plugin.
+
+</details>
 
 ## Application Walkthroughs
 
