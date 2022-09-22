@@ -67,6 +67,7 @@ while [ $DONE -ne 0 ]
 do
       leo build > /dev/null 2>&1
       DONE=$?
+      sleep 0.5
 done
 
 # Remove the dummy program.
