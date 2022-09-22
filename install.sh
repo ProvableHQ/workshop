@@ -52,7 +52,7 @@ Step 3: Installing Leo..."
 cd leo && cargo install --path . && cd ..
 
 echo "
-Step 4: Downloading the universal parameters. This may take a few minutes..."
+Step 4: Downloading parameters. This may take a few minutes..."
 
 # Create a new dummy Leo project.
 leo new dummy > /dev/null 2>&1 && cd dummy
@@ -60,16 +60,13 @@ leo new dummy > /dev/null 2>&1 && cd dummy
 # Attempt to compile the dummy program until it passes.
 # This is necessary to ensure that the universal parameters are downloaded.
 declare -i DONE
-declare -i NUMTRIES
 
 DONE=1
-NUMTRIES=0
 
 while [ $DONE -ne 0 ]
 do
       leo build > /dev/null 2>&1
       DONE=$?
-      NUMTRIES+=1
 done
 
 # Remove the dummy program.
