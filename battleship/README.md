@@ -1,4 +1,5 @@
-# Leo Battleship 🏴‍☠️
+<!-- # Leo Battleship 🏴‍☠️ -->
+<img alt="workshop/battleship" width="1412" src="../.resources/battleship.png">
 
 - [Summary](#summary)
 - [Build](#how-to-build)
@@ -23,6 +24,9 @@
 - [Winning](#winning-the-game)
 
 # Summary
+
+<img alt="workshop/battleship" width="1412" src="../.resources/battleship-steps.png">
+
 Battleship is a game where two players lay their ships into secret configurations on their respective 8x8 grids,
 and then take turns firing upon each other's board.
 The game ends when one player has sunk all of the other player's ships.
