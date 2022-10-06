@@ -23,7 +23,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-# Run the `propose` program function
+# Run the `propose` function
 (
  leo run propose || exit
 )
@@ -41,7 +41,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-# Run the `new_ticket` program function
+# Run the `new_ticket` function
 (
   leo run new_ticket || exit
 )
@@ -59,7 +59,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-# Run the `agree` or `disagree` program function
+# Run the `agree` or `disagree` function
 (
   leo run agree || exit
   # leo run disagree || exit
