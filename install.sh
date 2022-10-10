@@ -52,5 +52,27 @@ Step 3: Installing Leo..."
 cd leo && cargo install --path . && cd ..
 
 echo "
+Step 4: Downloading parameters. This may take a few minutes..."
+
+# Create a new dummy Leo project.
+leo new dummy > /dev/null 2>&1 && cd dummy
+
+# Attempt to compile the dummy program until it passes.
+# This is necessary to ensure that the universal parameters are downloaded.
+declare -i DONE
+
+DONE=1
+
+while [ $DONE -ne 0 ]
+do
+      leo build > /dev/null 2>&1
+      DONE=$?
+      sleep 0.5
+done
+
+# Remove the dummy program.
+cd .. && rm -rf dummy
+
+echo "
 Installation complete. Open a new Terminal to begin.
 "
