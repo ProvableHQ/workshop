@@ -52,7 +52,7 @@ Step 3: Installing Leo..."
 cd leo && cargo install --path . && cd ..
 
 echo "
-Step 4: Downloading parameters. This may take a few minutes...
+Step 4: Downloading parameters. This will take a few minutes...
 "
 
 # Create a new Leo project.
