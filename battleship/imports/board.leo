@@ -59,21 +59,22 @@ program board.aleo {
         };
     }
 
-    // Returns a new board state record that includes all the played tiles.
-    // Fails if r1 has been played before.
+    // Returns a new board state record that includes all the played tiles,
+    // updated with a given shot.
+    // Fails if the shot has been fired before.
     transition update_played_tiles(
         // The record of the board to update.
         board: board_state,
         // The u64 equivalent of a bitstring fire coordinate to send to the opponent.
         shoot: u64,
     ) -> board_state {
-        // Need to make sure r1 is a valid move. Only one bit of r1 should be flipped.
+        // Need to make sure shoot is a valid move. Only one bit of shoot should be flipped.
         let flip_bit: u64 = shoot - 1u64;
         // bitwise and operation
         let check_move: u64 = shoot & flip_bit;
         console.assert_eq(check_move, 0u64);
 
-        // Need to make sure r1 is a valid move given the played_tiles. no bits should overlap.
+        // Need to make sure shoot is a valid move given the played_tiles: no bits should overlap.
         let check_tiles: u64 = shoot & board.played_tiles;
         console.assert_eq(check_tiles, 0u64);
 
@@ -92,7 +93,8 @@ program board.aleo {
         };
     }
 
-    // Returns a new board state record that includes all the hits and misses.
+    // Returns a new board state record that includes all the hits and misses,
+    // updated with a given hit-or-miss from a shot.
     transition update_hits_and_misses(
         // The record of the board to update.
         board: board_state,
@@ -114,5 +116,3 @@ program board.aleo {
         };
     }
 }
-
-
