@@ -18,7 +18,7 @@ program token.aleo {
     // The function `mint_public` issues the specified token amount for the token receiver publicly on the network.
     transition mint_public(public receiver: address, public amount: u64) {
         // Mint the tokens publicly by invoking the computation on-chain.
-        async finalize(receiver, amount);
+        return then finalize(receiver, amount);
     }
 
     finalize mint_public(public receiver: address, public amount: u64) {
@@ -40,7 +40,7 @@ program token.aleo {
     /* Transfer */
     transition transfer_public(public receiver: address, public amount: u64) {
         // Transfer the tokens publicly, by invoking the computation on-chain.
-        async finalize(self.caller, receiver, amount);
+        return then finalize(self.caller, receiver, amount);
     }
 
     finalize transfer_public(public sender: address, public receiver: address, public amount: u64) {
@@ -94,11 +94,9 @@ program token.aleo {
             amount: difference,
         };
 
-        // Increment the token amount publicly for the token receiver.
-        async finalize(receiver, amount);
-
         // Output the sender's change record.
-        return remaining;
+        // Increment the token amount publicly for the token receiver.
+        return remaining then finalize(receiver, amount);
     }
 
     finalize transfer_private_to_public(public receiver: address, public amount: u64) {
@@ -118,11 +116,9 @@ program token.aleo {
             amount: amount,
         };
 
-        // Decrement the token amount of the caller publicly.
-        async finalize(self.caller, amount);
-
         // Output the receiver's record.
-        return transferred;
+        // Decrement the token amount of the caller publicly.
+        return transferred then finalize(self.caller, amount);
     }
 
     finalize transfer_public_to_private(public sender: address, public amount: u64) {
