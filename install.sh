@@ -43,13 +43,13 @@ echo "
 Step 2: Installing Aleo..."
 
 # Install 'aleo'.
-cd aleo && cargo install --path . && cd ..
+cd aleo && cargo install --locked --path . && cd ..
 
 echo "
 Step 3: Installing Leo..."
 
 # Install 'leo'.
-cd leo && cargo install --path . && cd ..
+cd leo && cargo install --locked --path . && cd ..
 
 echo "
 Step 4: Downloading parameters. This will take a few minutes...
