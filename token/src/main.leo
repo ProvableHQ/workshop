@@ -45,7 +45,7 @@ program token.aleo {
     }
 
     finalize transfer_public(public sender: address, public receiver: address, public amount: u64) {
-         // Decrements `account[sender]` by `amount`.
+        // Decrements `account[sender]` by `amount`.
         // If `account[sender]` does not exist, it will be created.
         // If `account[sender] - amount` underflows, `transfer_public` is reverted.
         let sender_amount: u64 = Mapping::get_or_init(account, sender, 0u64);
