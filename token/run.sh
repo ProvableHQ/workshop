@@ -176,7 +176,6 @@ echo "
 "
 leo run transfer_private "{
         owner: aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z.private,
-        gates: 0u64.private,
         amount: 100u64.private,
         _nonce: 6586771265379155927089644749305420610382723873232320906747954786091923851913group.public
     }" aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 20u64
@@ -263,7 +262,6 @@ echo "
 "
 leo run transfer_private_to_public "{
         owner: aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z.private,
-        gates: 0u64.private,
         amount: 80u64.private,
         _nonce: 1852830456042139988098466781381363679605019151318121788109768539956661608520group.public
     }" aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 40u64

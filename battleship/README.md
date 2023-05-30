@@ -91,7 +91,6 @@ leo run initialize_board 34084860461056u64 551911718912u64 7u64 1157425104234217
 
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 1157459741006397447u64.private,
@@ -125,7 +124,6 @@ Now, we can offer a battleship game to player 2. Run `leo run offer_battleship '
 ```
 leo run offer_battleship '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 1157459741006397447u64.private,
@@ -142,7 +140,6 @@ leo run offer_battleship '{
 
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 1157459741006397447u64.private,
@@ -153,7 +150,6 @@ leo run offer_battleship '{
 }
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 0u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -201,7 +197,6 @@ leo run initialize_board 31u64 2207646875648u64 224u64 9042383626829824u64 aleo1
 
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 9044591273705727u64.private,
@@ -231,7 +226,6 @@ Now, we can accept Player 1's offer. Run `leo run start_battleship 'board_state.
 ```bash
 leo run start_battleship '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 9044591273705727u64.private,
@@ -241,7 +235,6 @@ leo run start_battleship '{
   _nonce: 1549419609469324182591325047490602235361156298832591378925133482196483208807group.public
 }' '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 0u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -256,7 +249,6 @@ leo run start_battleship '{
 
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 9044591273705727u64.private,
@@ -267,7 +259,6 @@ leo run start_battleship '{
 }
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 0u64.private,
   player_1: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
   player_2: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
@@ -290,7 +281,6 @@ Player 1 now makes the first real move: `leo run play 'board_state.record' 'move
 ```bash
 leo run play '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 1157459741006397447u64.private,
@@ -300,7 +290,6 @@ leo run play '{
   _nonce: 6563064852163330630334088854834332804417910882908622526775624018226782316843group.public
 }' '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 0u64.private,
   player_1: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
   player_2: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
@@ -314,7 +303,6 @@ leo run play '{
 
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 1u64.private,
   ships: 1157459741006397447u64.private,
@@ -325,7 +313,6 @@ leo run play '{
 }
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 1u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -349,7 +336,6 @@ and they will also let Player 1 know whether their fire coordinate hit or miss P
 ```bash
 leo run play '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 0u64.private,
   ships: 9044591273705727u64.private,
@@ -359,7 +345,6 @@ leo run play '{
   _nonce: 6222383571142756260765569201308836492199048237638652378826141459336360362251group.public
 }' '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 1u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -375,7 +360,6 @@ leo run play '{
 
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 2048u64.private,
   ships: 9044591273705727u64.private,
@@ -386,7 +370,6 @@ leo run play '{
 }
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 2048u64.private,
   player_1: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
   player_2: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
@@ -419,7 +402,6 @@ For example, running `aleo run play 'board_state.record' 'move.record' 1u64` wil
 ```bash
 leo run play '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 1u64.private,
   ships: 1157459741006397447u64.private,
@@ -429,7 +411,6 @@ leo run play '{
   _nonce: 1474170213684980843727833284550698461565286563122422722760769547002894080093group.public
 }' '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 2048u64.private,
   player_1: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
   player_2: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
@@ -444,7 +425,6 @@ leo run play '{
 
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   hits_and_misses: 1u64.private,
   played_tiles: 3u64.private,
   ships: 1157459741006397447u64.private,
@@ -455,7 +435,6 @@ leo run play '{
 }
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 2u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -488,7 +467,6 @@ The board_state.record `hits_and_misses` field has also been updated with the re
 ```bash
 leo run play '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 2048u64.private,
   ships: 9044591273705727u64.private,
@@ -498,7 +476,6 @@ leo run play '{
   _nonce: 5254963165391133332409074172682159033621708071536429341861038147524454777097group.public
 }' '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 2u64.private,
   player_1: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   player_2: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -513,7 +490,6 @@ leo run play '{
 
  • {
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
-  gates: 0u64.private,
   hits_and_misses: 0u64.private,
   played_tiles: 2052u64.private,
   ships: 9044591273705727u64.private,
@@ -524,7 +500,6 @@ leo run play '{
 }
  • {
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
-  gates: 0u64.private,
   incoming_fire_coordinate: 4u64.private,
   player_1: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
   player_2: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,

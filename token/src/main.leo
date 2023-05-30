@@ -7,8 +7,6 @@ program token.aleo {
     record token {
         // The token owner.
         owner: address,
-        // The Aleo balance (in gates).
-        gates: u64,
         // The token amount.
         amount: u64,
     }
@@ -33,7 +31,6 @@ program token.aleo {
     transition mint_private(receiver: address, amount: u64) -> token {
         return token {
             owner: receiver,
-            gates: 0u64,
             amount: amount,
         };
     }
@@ -68,14 +65,12 @@ program token.aleo {
         // Produce a token record with the change amount for the sender.
         let remaining: token = token {
             owner: sender.owner,
-            gates: sender.gates,
             amount: difference,
         };
 
         // Produce a token record for the specified receiver.
         let transferred: token = token {
             owner: receiver,
-            gates: 0u64,
             amount: amount,
         };
 
@@ -94,7 +89,6 @@ program token.aleo {
         // Produces a token record with the change amount for the caller.
         let remaining: token = token {
             owner: sender.owner,
-            gates: sender.gates,
             amount: difference,
         };
 
@@ -117,7 +111,6 @@ program token.aleo {
         // Produces a token record for the token receiver.
         let transferred: token = token {
             owner: receiver,
-            gates: 0u64,
             amount: amount,
         };
 

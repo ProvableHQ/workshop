@@ -10,7 +10,6 @@ program vote.aleo {
     // Proposal record records proposal info publicly
     record Proposal {
         owner: address,
-        gates: u64,
         id: field,
         info: ProposalInfo,
     }
@@ -21,7 +20,6 @@ program vote.aleo {
     // Privacy tickets to vote
     record Ticket {
         owner: address,
-        gates: u64,
         pid: field,
     }
 
@@ -44,7 +42,6 @@ program vote.aleo {
         // Finalize the proposal id.
         return Proposal {
             owner: self.caller,
-            gates: 0u64,
             id,
             info,
         } then finalize(id);
@@ -62,7 +59,6 @@ program vote.aleo {
         // Finalize the proposal id for the ticket.
         return Ticket {
             owner: voter,
-            gates: 0u64,
             pid,
         } then finalize(pid);
     }
