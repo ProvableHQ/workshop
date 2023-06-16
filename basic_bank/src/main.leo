@@ -47,7 +47,7 @@ program basic_bank.aleo {
     // - `hash`  : The hash of the token owner.
     // - `amount`: The amount of tokens that were deposited.
     finalize deposit(hash: field, amount: u64) {
-        let balance: u64 = Mapping::get_or_init(balances, hash, 0u64);
+        let balance: u64 = Mapping::get_or_use(balances, hash, 0u64);
         Mapping::set(balances, hash, amount + balance);
     }
 
@@ -75,7 +75,7 @@ program basic_bank.aleo {
     // - `hash`  : The hash of the token owner.
     // - `amount`: The amount of tokens that were withdrawn.
     finalize withdraw(hash: field, amount: u64) {
-        let balance: u64 = Mapping::get_or_init(balances, hash, 0u64);
+        let balance: u64 = Mapping::get_or_use(balances, hash, 0u64);
         Mapping::set(balances, hash, balance - amount);
     }
 
