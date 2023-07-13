@@ -44,11 +44,13 @@ program vote.aleo {
             owner: self.caller,
             id,
             info,
-        } then finalize(id);
+        } then finalize(id, info);
     }
-    // Create a new proposal in the "tickets" mapping.
-    finalize propose(public id: field) {
-        Mapping::set(tickets, id, 0u64);
+    // Create a new proposal in the `proposals` mapping.
+    finalize propose(public id: field, public proposal: ProposalInfo) {
+        // You can't amend proposal in this example
+        assert(!Mapping::contains(proposals, id));
+        Mapping::set(proposals, id, proposal); 
     }
 
     // Create a new ticket to vote with.
@@ -60,10 +62,14 @@ program vote.aleo {
         return Ticket {
             owner: voter,
             pid,
-        } then finalize(pid);
+        } then finalize(pid, self.caller);
     }
     // Create a new ticket on a proposal in the "tickets" mapping.
-    finalize new_ticket(public pid: field) {
+    finalize new_ticket(public pid: field, caller_core: address) {
+        // Only proposer can create tickets
+        let proposal: ProposalInfo = Mapping::get(proposals, pid);
+        assert_eq(caller_core, proposal.proposer);
+
         let vote: u64 = Mapping::get_or_use(tickets, pid, 0u64);
         Mapping::set(tickets, pid, vote + 1u64);
     }
