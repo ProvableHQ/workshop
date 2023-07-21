@@ -16,17 +16,11 @@ fi
 # "private_key": "APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc"
 # "address": "aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg"
 
-# Swap in the private key and address of the bank to program.json.
-echo "{
-  \"program\": \"basic_bank.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD\",
-      \"address\": \"aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the bank to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
+" > .env
 
 # Have the bank issue 100 tokens to the user.
 echo "
@@ -69,19 +63,13 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64;
+leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64 || exit
 
-# Swap in the private key and address of the user to program.json.
-echo "{
-  \"program\": \"basic_bank.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc\",
-      \"address\": \"aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the user to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc
+" > .env
 
 # Have the user deposit 50 tokens into the bank.
 echo "
@@ -128,7 +116,7 @@ leo run deposit "{
     owner: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg.private,
     amount: 100u64.private,
     _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
-}"  50u64
+}"  50u64 || exit
 
 echo "
 ###############################################################################
@@ -171,17 +159,11 @@ echo "
 ###############################################################################
 "
 
-# Swap in the private key and address of the bank to program.json.
-echo "{
-  \"program\": \"basic_bank.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD\",
-      \"address\": \"aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the bank to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
+" > .env
 
 # Have the bank withdraw all of the user's tokens with compound interest over 15 periods at 12.34%.
 echo "
@@ -224,4 +206,5 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run withdraw aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a 50u64 1234u64 15u64;
+leo run withdraw aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a 50u64 1234u64 15u64 || exit
+

@@ -1,4 +1,3 @@
-// The `program` scope defines the data types, functions, and state associated with the `basic_bank` program.
 program basic_bank.aleo {
     // A token, issued by a bank.
     // - 'owner'  : The address of the account that owns the record associated with this token.
@@ -38,17 +37,17 @@ program basic_bank.aleo {
         };
 
         // Compute the hash of the token owner.
-        let hash: field = BHP256::hash(token.owner);
+        let hash: field = BHP256::hash_to_field(token.owner);
 
-        return remaining then finalize (hash, amount);
+        return remaining then finalize(hash, amount);
     }
 
     // Updates on-chain state by the amount of tokens deposited.
     // - `hash`  : The hash of the token owner.
     // - `amount`: The amount of tokens that were deposited.
     finalize deposit(hash: field, amount: u64) {
-        let balance: u64 = Mapping::get_or_use(balances, hash, 0u64);
-        Mapping::set(balances, hash, amount + balance);
+        let current_amount: u64 = Mapping::get_or_use(balances, hash, 0u64);
+        Mapping::set(balances, hash, current_amount + amount);
     }
 
     // Returns a new Token containing the amount of money withdrawn.
@@ -59,7 +58,7 @@ program basic_bank.aleo {
     // Requires that the function caller is the bank.
     transition withdraw(recipient: address, amount: u64, rate: u64, periods: u64) -> Token {
         assert_eq(self.caller, aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a);
-        let hash: field = BHP256::hash(recipient);
+        let hash: field = BHP256::hash_to_field(recipient);
 
         let total: u64 = calculate_interest(amount, rate, periods);
 
@@ -75,8 +74,8 @@ program basic_bank.aleo {
     // - `hash`  : The hash of the token owner.
     // - `amount`: The amount of tokens that were withdrawn.
     finalize withdraw(hash: field, amount: u64) {
-        let balance: u64 = Mapping::get_or_use(balances, hash, 0u64);
-        Mapping::set(balances, hash, balance - amount);
+        let current_amount: u64 = Mapping::get_or_use(balances, hash, 0u64);
+        Mapping::set(balances, hash, current_amount - amount);
     }
 
     // Returns the total amount of tokens after compounding interest.
@@ -94,8 +93,4 @@ program basic_bank.aleo {
 
         return amount;
     }
-
-
-
-
 }
