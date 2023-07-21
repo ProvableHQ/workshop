@@ -1,4 +1,4 @@
-// The `program` scope defines the data types, functions, and state associated with the `vote` program.
+// The 'vote.leo' program.
 program vote.aleo {
     // Proposal details
     struct ProposalInfo {
@@ -36,7 +36,8 @@ program vote.aleo {
         assert_eq(self.caller, info.proposer);
 
         // Generate a new proposal id.
-        let id: field = BHP256::hash(info.title);
+        let id: field = BHP256::hash_to_field(info.title);
+
 
         // Return a new record for the proposal.
         // Finalize the proposal id.
@@ -56,6 +57,7 @@ program vote.aleo {
         public pid: field,
         public voter: address,
     ) -> Ticket {
+
         // Finalize the proposal id for the ticket.
         return Ticket {
             owner: voter,
@@ -64,8 +66,8 @@ program vote.aleo {
     }
     // Create a new ticket on a proposal in the "tickets" mapping.
     finalize new_ticket(public pid: field) {
-        let vote: u64 = Mapping::get_or_use(tickets, pid, 0u64);
-        Mapping::set(tickets, pid, vote + 1u64);
+        let current: u64 = Mapping::get_or_use(tickets, pid, 0u64);
+        Mapping::set(tickets, pid, current + 1u64);
     }
 
     // Vote privately to agree with a proposal.
@@ -75,8 +77,8 @@ program vote.aleo {
     }
     finalize agree(public pid: field) {
         // Publicly increment the number of agree votes.
-        let agree_vote: u64 = Mapping::get_or_use(agree_votes, pid, 0u64);
-        Mapping::set(agree_votes, pid, agree_vote + 1u64);
+        let current: u64 = Mapping::get_or_use(agree_votes, pid, 0u64);
+        Mapping::set(agree_votes, pid, current + 1u64);
     }
 
     // Vote privately to disagree with a proposal.
@@ -86,7 +88,7 @@ program vote.aleo {
     }
     finalize disagree(pid: field) {
         // Publicly increment the number of disagree votes.
-        let disagree_vote: u64 = Mapping::get_or_use(disagree_votes, pid, 0u64);
-        Mapping::set(disagree_votes, pid, disagree_vote + 1u64);
+        let current: u64 = Mapping::get_or_use(disagree_votes, pid, 0u64);
+        Mapping::set(disagree_votes, pid, current + 1u64);
     }
 }

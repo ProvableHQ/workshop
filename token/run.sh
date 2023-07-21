@@ -16,17 +16,11 @@ fi
 # "private_key": "APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF"
 # "address": "aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z"
 
-# Swap in the private key and address of the Alice to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR\",
-      \"address\": \"aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the Alice to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+" > .env
 
 # Publicly mint 100 tokens for Alice.
 echo "
@@ -56,17 +50,11 @@ echo "
 "
 leo run mint_public aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 100u64
 
-# Swap in the private key and address of Bob to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF\",
-      \"address\": \"aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of Bob to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+" > .env
 
 # Privately mint 100 tokens for Bob.
 echo "
@@ -96,17 +84,11 @@ echo "
 "
 leo run mint_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z 100u64
 
-# Swap in the private key and address of the Alice to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR\",
-      \"address\": \"aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the Alice to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+" > .env
 
 # Publicly transfer 10 tokens from Alice to Bob.
 echo "
@@ -136,17 +118,11 @@ echo "
 "
 leo run transfer_public aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z 10u64
 
-# Swap in the private key and address of Bob to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF\",
-      \"address\": \"aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of Bob to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+" > .env
 
 # Privately transfer 20 tokens from Bob to Alice.
 echo "
@@ -180,17 +156,11 @@ leo run transfer_private "{
         _nonce: 6586771265379155927089644749305420610382723873232320906747954786091923851913group.public
     }" aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 20u64
 
-# Swap in the private key and address of the Alice to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR\",
-      \"address\": \"aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the Alice to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+" > .env
 
 # Convert 30 public tokens from Alice into 30 private tokens for Bob.
 echo "
@@ -221,17 +191,11 @@ echo "
 "
 leo run transfer_public_to_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z 30u64
 
-# Swap in the private key and address of Bob to program.json.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF\",
-      \"address\": \"aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of Bob to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+" > .env
 
 # Convert 40 private tokens from Bob into 40 public tokens for Alice.
 echo "
@@ -269,13 +233,8 @@ leo run transfer_private_to_public "{
 
 # Swap in the private key and address of the Alice to program.json.
 # This is done to ensure that program.json is the same after every execution of ./run.sh.
-echo "{
-  \"program\": \"token.aleo\",
-  \"version\": \"0.0.0\",
-  \"description\": \"\",
-  \"development\": {
-      \"private_key\": \"APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR\",
-      \"address\": \"aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q\"
-  },
-  \"license\": \"MIT\"
-}" > program.json
+# Swap in the private key and address of the Alice to .env.
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+" > .env
