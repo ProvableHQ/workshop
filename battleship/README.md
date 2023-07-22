@@ -59,20 +59,11 @@ Player 2:
       Address  aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 ```
 
-Save the keys and addresses. Set the `program.json` private_key and address to one of the newly created aleo accounts. We'll refer to this address as Player 1, and the remaining address as Player 2.
+Save the keys and addresses. Set the `.env` private_key and address to one of the newly created aleo accounts. We'll refer to this address as Player 1, and the remaining address as Player 2.
 
-```json
-{
-    "program": "battleship.aleo",
-    "version": "0.0.0",
-    "description": "Play ZK Battleship",
-    "development": {
-        "private_key": "APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm",
-        "view_key": "AViewKey1fSyEPXxfPFVgjL6qcM9izWRGrhSHKXyN3c64BNsAjnA6",
-        "address": "aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy"
-    },
-    "license": "MIT"
-}
+```text
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 ```
 
 ### 2. Player 1 Places Ships on the Board
@@ -170,19 +161,10 @@ and no information about any previous Player 2 moves (Player 2 has not made any 
 This move.record is owned by Player 2, who must use that in combination with their own board_state.record to accept the game. Let's do that now.
 
 ### 4: Player 2 Places Ships On The Board
-We must run the program as Player 2 now, so switch the `program.json` file to use Player 2's keys:
-```json
-{
-    "program": "battleship.aleo",
-    "version": "0.0.0",
-    "description": "Play ZK Battleship",
-    "development": {
-        "private_key": "APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH",
-        "view_key": "AViewKey1hh6dvSEgeMdfseP4hfdbNYjX4grETwCuTbKnCftkpMwE",
-        "address": "aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry"
-    },
-    "license": "MIT"
-}
+We must run the program as Player 2 now, so switch the `.env` file to use Player 2's keys:
+```text
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 ```
 
 We'll create a new and different board for Player 2, and make sure to include Player 1's address as the opponent:
@@ -274,7 +256,7 @@ A dummy move.record is owned by Player 1, and Player 2 gets a board_state.record
 However, now that Player 1 has a move.record and a started board, they can begin to play.
 
 ### 6: Player 1 Takes The 1st Turn
-**Switch** `program.json`'s keys back to Player 1's.
+**Switch** `.env`'s keys back to Player 1's.
 Player 1 now makes the first real move: `leo run play 'board_state.record' 'move.record' fire_coordinate`
 
 **Run**
@@ -330,7 +312,7 @@ Player 2 can now play this move tile and respond with a fire coordinate of their
 and they will also let Player 1 know whether their fire coordinate hit or miss Player 2's ships.
 
 ### 7: Player 2 Takes The 2nd Turn
-**Switch** `program.json` to Player 2's keys. Player 2 makes their move:
+**Switch** `.env` to Player 2's keys. Player 2 makes their move:
 
 **Run**
 ```bash
@@ -396,7 +378,7 @@ Now that Player 1 has some `played_tiles`, they can no longer choose an alread-p
 For example, running `aleo run play 'board_state.record' 'move.record' 1u64` will fail, because 1u64 has already been played.
 
 ### 8: Player 1 Takes The 3rd Turn
-**Switch** `program.json` to use Player 1's keys.
+**Switch** `.env` to use Player 1's keys.
 
 **Run**
 ```bash
@@ -461,7 +443,7 @@ The board_state.record now contains 3u64 as the `played_tiles`, which looks like
 The board_state.record `hits_and_misses` field has also been updated with the result of their previous move. The new move.record owned by Player 2 now contains information about whether Player 2's previous move was a hit or miss, as well as Player 1's new fire coordinate.
 
 ### 9: Player 2 Takes The 4th Turn
-**Switch** `program.json`'s keys to Player 2. Player 2 makes their next move:
+**Switch** `.env`'s keys to Player 2. Player 2 makes their next move:
 
 **Run**
 ```bash

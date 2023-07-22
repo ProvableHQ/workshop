@@ -31,28 +31,28 @@ mkdir -p .build
 cd .build
 
 echo "
-Step 1: Fetching the Aleo and Leo Github repositories..."
+Step 1: Fetching the Leo Github repository..."
 
-# Clone the 'aleo' repository, or pull if it already exists.
-git clone https://github.com/AleoHQ/aleo.git aleo 2> /dev/null || (cd aleo ; git pull)
+## Clone the 'aleo' repository, or pull if it already exists.
+#git clone https://github.com/AleoHQ/aleo.git aleo 2> /dev/null || (cd aleo ; git pull)
 
 # Clone the 'leo' repository, or pull if it already exists.
 git clone https://github.com/AleoHQ/leo.git leo 2> /dev/null || (cd leo ; git pull)
 
-echo "
-Step 2: Installing Aleo..."
+#echo "
+#Step 2: Installing Aleo..."
+#
+## Install 'aleo'.
+#cd aleo && cargo install --locked --path . && cd ..
 
-# Install 'aleo'.
-cd aleo && cargo install --locked --path . && cd ..
-
 echo "
-Step 3: Installing Leo..."
+Step 2: Installing Leo..."
 
 # Install 'leo'.
 cd leo && cargo install --locked --path . && cd ..
 
 echo "
-Step 4: Downloading parameters. This will take a few minutes...
+Step 3: Downloading parameters. This will take a few minutes...
 "
 
 # Create a new Leo project.
