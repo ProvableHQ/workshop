@@ -55,7 +55,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64 || exit
+leo run place_bid 10u64 || exit
 
 # Swap in the private key and address of the second bidder to .env.
 echo "
@@ -77,7 +77,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64 || exit
+leo run place_bid 90u64 || exit
 
 # Swap in the private key and address of the auctioneer to .env.
 echo "
