@@ -15,9 +15,7 @@ program auction.aleo {
     }
 
     // Returns a new bid.
-    // - `bidder` : The address of the account that placed the bid.
     // - `amount` : The amount of the bid.
-    // Requires that `bidder` matches the function caller.
     // The owner of the record is set to the entity responsible for running the auction (auction runner).
     // The address of the auction runner is aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.
     transition place_bid(amount: u64) -> Bid {
