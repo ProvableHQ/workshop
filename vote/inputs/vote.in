@@ -3,7 +3,7 @@
 info: ProposalInfo = ProposalInfo {
     title: 2077160157502449938194577302446444field,
     content: 1452374294790018907888397545906607852827800436field,
-    proposer: aleo1kkk52quhnxgn2nfrcd9jqk7c9x27c23f2wvw7fyzcze56yahvcgszgttu2,
+    proposer: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr,
 };
 
 [new_ticket]
