@@ -5,7 +5,25 @@ then
     echo "leo is not installed."
     exit
 fi
-# Create a new game.
+
+echo "
+Here we'll play a game of tic tac toe.
+
+We generate the board, and then the player take turns executing the transition function make_move.
+
+The inputs to the function are the player number, row position, column position, and the previous state of the board.
+
+The output provided is the new state of the board and an evaluation of who won the game. 0u8 in this case means a draw if the board is complete or that the game is not yet over.
+"
+
+echo "
+Create a new game.
+
+leo run new
+"
+
+leo run new
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -17,9 +35,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run new || exit
 
-# Have the Player 1 make a move.
+echo "
+Have player 1 make the first move.
+
+leo run make_move 1u8 1u8 1u8 '{ r1: { c1: 0u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 1u8 1u8 1u8 "{ r1: { c1: 0u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -31,9 +55,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 1u8 1u8 1u8 "{ r1: { c1: 0u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 2 make a move.
+echo "
+Have player 2 make the second move.
+
+leo run make_move 2u8 2u8 2u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 2u8 2u8 2u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -45,9 +75,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 2u8 2u8 2u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 1 make a move.
+echo "
+Have player 1 make the third move.
+
+leo run make_move 1u8 3u8 1u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 1u8 3u8 1u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -59,9 +95,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 1u8 3u8 1u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 2 make a move.
+echo "
+Have player 2 make the fourth move.
+
+leo run make_move 2u8 2u8 1u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 2u8 2u8 1u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -73,9 +115,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 2u8 2u8 1u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 1 make a move.
+echo "
+Have player 1 make the fifth move.
+
+leo run make_move 1u8 2u8 3u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 1u8 2u8 3u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -87,9 +135,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 1u8 2u8 3u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 2 make a move.
+echo "
+Have player 2 make the sixth move.
+
+leo run make_move 2u8 1u8 2u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 2u8 1u8 2u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -101,9 +155,15 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 2u8 1u8 2u8 "{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 1 make a move.
+echo "
+Have player 1 make the seventh move.
+
+leo run make_move 1u8 3u8 2u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
+"
+
+leo run make_move 1u8 3u8 2u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -115,9 +175,16 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 1u8 3u8 2u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }" || exit
 
-# Have the Player 2 make a move.
+
+echo "
+Have player 2 make the eighth move.
+
+leo run make_move 2u8 3u8 3u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 0u8 } }'
+"
+
+leo run make_move 2u8 3u8 3u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 0u8 } }"
+
 echo "
 ###############################################################################
 ########                                                               ########
@@ -129,7 +196,14 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 2u8 3u8 3u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 0u8 } }" || exit
+
+echo "
+Have player 1 make the ninth move.
+
+leo run make_move 1u8 1u8 3u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 2u8 } }'
+"
+
+leo run make_move 1u8 1u8 3u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 2u8 } }"
 
 echo "
 ###############################################################################
@@ -142,9 +216,10 @@ echo "
 ########                                                               ########
 ###############################################################################
 "
-leo run make_move 1u8 1u8 3u8 "{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 2u8 } }" || exit
 
 echo "
+Output is still 0u8 at the end. Draw!
+
 ###############################################################################
 ########                                                               ########
 ########               Game Complete! Players 1 & 2 Tied               ########
