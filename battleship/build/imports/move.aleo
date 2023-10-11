@@ -20,5 +20,5 @@ function create_move:
 
 function start_game:
     input r0 as address.private;
-    cast r0 0u64 self.caller r0 0u64 into r1 as move.record;
+    cast r0 0u64 self.signer r0 0u64 into r1 as move.record;
     output r1 as move.record;

@@ -13,7 +13,7 @@ We generate the board, and then the player take turns executing the transition f
 
 The inputs to the function are the player number, row position, column position, and the previous state of the board.
 
-The output provided is the new state of the board and an evaluation of who won the game. 0u8 in this case means a draw if the board is complete or that the game is not yet over.
+The output provided is the new state of the board and an evaluation of who won the game. 0u8 as the evaluation output means a draw if the board is complete or that the game is not yet over.
 "
 
 echo "

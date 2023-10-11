@@ -9,13 +9,13 @@ fi
 echo "
 We'll be conducting a transfer between two parties.
 
-# The private key and address of Alice.
-# "private_key": "APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR",
-# "address": "aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q"
+The private key and address of Alice.
+private_key: APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+address: aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q
 
-# The private key and address of Bob.
-# "private_key": "APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF"
-# "address": "aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z"
+The private key and address of Bob.
+private_key: APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+address: aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z
 "
 
 echo "
@@ -129,7 +129,7 @@ PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
 leo run transfer_public aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z 10u64
 
 echo "
-Again, we see the arguments used for the finzalize function of transfer_public - Alice's address, Bob's address, and the amount to transfer. This information is shown on-chain and can be queried on a network.
+Again, we see the arguments used for the finzalize function of transfer_public - Alice's address, Bob's address, and the amount to transfer. The public mapping will be queryable on-chain.
 
 ###############################################################################
 ########                                                               ########
@@ -284,7 +284,7 @@ leo run transfer_private_to_public "{
 }" aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 40u64
 
 echo "
-When we call transfer_private_to_public, we take Bob's private record that contains 80 tokens, and outputs a record owned by Bob with 40 tokens, and calls the finalize function under transfer_private_to_public with Alice's address and 40 tokens as arguments. This changes the public mapping under Alice's address to contain 40 public tokens. Again, public mappings are shown on-chain and can be queried on a network.
+When we call transfer_private_to_public, we take Bob's private record that contains 80 tokens, and outputs a record owned by Bob with 40 tokens, and calls the finalize function under transfer_private_to_public with Alice's address and 40 tokens as arguments. This changes the public mapping under Alice's address to contain 40 public tokens. Again, public mappings are queryable on-chain.
 
 ###############################################################################
 ########                                                               ########

@@ -7,23 +7,19 @@ then
 fi
 
 echo "
-We will be playing the role of these four parties:
+We will be playing the role of three parties.
 
-# The private key and address of the proposer.
-# "private_key": "APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G",
-# "address": "aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr"
+The private key and address of the proposer.
+private_key: APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
+address: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
 
-# The private key and address of voter 1.
-# "private_key": "APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2"
-# "address": "aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2"
+The private key and address of voter 1.
+private_key: APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
+address: aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
 
-# The private key and address of voter 2.
-# "private_key": "APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2"
-# "address": "aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc"
-
-# The private key and address of voter 3.
-# "private_key": "APrivateKey1zkpAh6JusXVdrqT4RuNeMYNc1BCCpacEQr33j8YSNoA3V4D"
-# "address": "aleo12ufz737y7wgpgr5q2pyjydenee9u02rwdz32ajurmhg79m3hcc8s3fgu9m"
+The private key and address of voter 2.
+private_key: APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
+address: aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
 "
 
 echo "
@@ -34,7 +30,11 @@ NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
 ' > .env
 
-leo run propose
+leo run propose '{ 
+  title: 2077160157502449938194577302446444field, 
+  content: 1452374294790018907888397545906607852827800436field, 
+  proposer: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
+}'
 "
 
 # swaps in the private key of the proposer to .env
@@ -44,10 +44,14 @@ PRIVATE_KEY=APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
 " > .env
 
 # runs the propose transition function with proposal info as the input
-leo run propose
+leo run propose "{ 
+  title: 2077160157502449938194577302446444field, 
+  content: 1452374294790018907888397545906607852827800436field, 
+  proposer: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
+}"
 
 echo "
-You'll see that the output generates a new record with the proposal information and ...
+You'll see that the output generates a new record with the proposal information and sets a public mapping with the proposal id as an argument input. The public mapping will be queryable on-chain.
 "
 
 echo "
@@ -121,7 +125,7 @@ leo run agree "{
 echo "
 ###############################################################################
 ########                                                               ########
-########            Voter 1 votes 'yes' on the ballot ticket           ########
+########            Voter 1 votes 'yes' on their ballot ticket         ########
 ########                                                               ########
 ########                  ---------------------------                  ########
 ########                  |         |  Yes  |   No  |                  ########
@@ -185,7 +189,7 @@ leo run disagree "{
 echo "
 ###############################################################################
 ########                                                               ########
-########            Voter 2 votes 'no' on the ballot ticket            ########
+########            Voter 2 votes 'no' on their ballot ticket          ########
 ########                                                               ########
 ########                  ---------------------------                  ########
 ########                  |         |  Yes  |   No  |                  ########

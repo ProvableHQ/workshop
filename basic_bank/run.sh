@@ -7,17 +7,15 @@ then
 fi
 
 echo "
-We will be playing the role of these two parties:
+We will be playing the role of two parties.
 
-# The private key and address of the bank.
-# Swap these into program.json, when running transactions as the first bidder.
-# "private_key": "APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD",
-# "address": "aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a"
+The private key and address of the bank.
+private_key: APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
+address: aleo1t0uer3jgtsgmx5tq6x6f9ecu8tr57rzzfnc2dgmcqldceal0ls9qf6st7a
 
-# The private key and address of the user.
-# Swap these into program.json, when running transactions as the second bidder.
-# "private_key": "APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc"
-# "address": "aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg"
+The private key and address of the user.
+private_key: APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc
+address: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg
 "
 
 echo "
@@ -28,7 +26,7 @@ NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 ' > .env
 
-leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64 || exit
+leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64
 "
 
 # swaps in the private key of the bank to .env
@@ -38,7 +36,7 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 
 # runs the issue transition with inputs (user address, amount)
-leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64 || exit
+leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64
 
 echo "
 ###############################################################################
@@ -64,7 +62,7 @@ echo "
 ########           -----------------------------------------           ########
 ########                                                               ########
 ########           -----------------------------------------           ########
-########           |      BANK       | aleo1zeklp...v46ngg |           ########
+########           |      BANK       | aleo1t0uer...f6st7a |           ########
 ########           -----------------------------------------           ########
 ########           -----------------------------------------           ########
 ########           |        Balance  |          0          |           ########
@@ -93,7 +91,7 @@ leo run deposit '{
     owner: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg.private,
     amount: 100u64.private,
     _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
-}'  50u64 || exit
+}'  50u64
 "
 
 # swaps in the private key of the user to .env
@@ -107,10 +105,10 @@ leo run deposit "{
     owner: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg.private,
     amount: 100u64.private,
     _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
-}"  50u64 || exit
+}"  50u64
 
 echo "
-You'll see that the output contains a new private record belonging to the user with 50 credits, and a public mapping with the bank that also shows 50 credits.
+You'll see that the output contains a new private record belonging to the user with 50 credits, and a finalize deposit function taking the arguments (bank address, amount) that will update a public mapping with 50 credits. This information is queryable on-chain.
 "
 
 echo "
@@ -137,7 +135,7 @@ echo "
 ########           -----------------------------------------           ########
 ########                                                               ########
 ########           -----------------------------------------           ########
-########           |      BANK       | aleo1zeklp...v46ngg |           ########
+########           |      BANK       | aleo1t0uer...f6st7a |           ########
 ########           -----------------------------------------           ########
 ########           -----------------------------------------           ########
 ########           |        Balance  |          50         |           ########
@@ -180,7 +178,7 @@ With the 50 token deposit, let's say 15 periods of time pass with compounding in
 ########           -----------------------------------------           ########
 ########                                                               ########
 ########           -----------------------------------------           ########
-########           |      BANK       | aleo1zeklp...v46ngg |           ########
+########           |      BANK       | aleo1t0uer...f6st7a |           ########
 ########           -----------------------------------------           ########
 ########           -----------------------------------------           ########
 ########           |        Balance  |         266         |           ########
@@ -205,7 +203,7 @@ NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 ' > .env
 
-leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64 || exit
+leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 
 "
 # swaps in the private key of the bank to .env
@@ -215,10 +213,10 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 
 # runs the withdraw transition with inputs (recipient, amount, rate, periods)
-leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64 || exit
+leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 
 echo "
-You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then sets the public balance of the bank back to 0.
+You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then calls the finalize withdraw function with arguments (address, amount), which will update the public balance of the bank back to 0. The public mapping will be queryable on-chain.
 "
 
 echo "
@@ -245,7 +243,7 @@ echo "
 ########           -----------------------------------------           ########
 ########                                                               ########
 ########           -----------------------------------------           ########
-########           |      BANK       | aleo1zeklp...v46ngg |           ########
+########           |      BANK       | aleo1t0uer...f6st7a |           ########
 ########           -----------------------------------------           ########
 ########           -----------------------------------------           ########
 ########           |        Balance  |          0          |           ########
