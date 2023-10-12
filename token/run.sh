@@ -229,7 +229,7 @@ PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
 leo run transfer_public_to_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z 30u64
 
 echo "
-When calling transfer_public_to_private, we see the finalize function with the arguments to modify Alice's public token mapping (address, amount), and a private record created that's owned by Bob and contains 30 tokens.
+When calling transfer_public_to_private, we see the finalize function with the arguments to modify Alice's public token mapping (address, amount), and a private record created that's owned by Bob and contains 110 tokens.
 
 ###############################################################################
 ########                                                               ########
@@ -284,7 +284,7 @@ leo run transfer_private_to_public "{
 }" aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm3008q 40u64
 
 echo "
-When we call transfer_private_to_public, we take Bob's private record that contains 80 tokens, and outputs a record owned by Bob with 40 tokens, and calls the finalize function under transfer_private_to_public with Alice's address and 40 tokens as arguments. This changes the public mapping under Alice's address to contain 40 public tokens. Again, public mappings are queryable on-chain.
+When we call transfer_private_to_public, we take Bob's private record that contains 110 tokens, and outputs a record owned by Bob with 70 tokens, and calls the finalize function under transfer_private_to_public with Alice's address and 40 tokens as arguments. This changes the public mapping under Alice's address to contain 100 public tokens. Again, public mappings are queryable on-chain.
 
 ###############################################################################
 ########                                                               ########
