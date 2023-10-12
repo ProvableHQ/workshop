@@ -44,7 +44,6 @@ cd battleship
 
 The `.env` file contains a private key and address. This is the account that will be used to sign transactions and is checked for record ownership. When executing programs as different parties, be sure to set the `private_key` field in `.env` to the appropriate value. You can check out how we've set things up in `./run.sh` for a full example of how to run the program as different parties.
 
-
 ## 1. Initializing the Players
 In order to play battleship, there must be two players with two boards. Players will be represented by their Aleo address.
 
@@ -480,6 +479,7 @@ leo run play "{
 ```
 
 ## 10. Who Wins?
+
 Play continues back and forth between Player 1 and Player 2. When one player has a total of 14 flipped bits in their `hits_and_misses` field on their `board_state.record`, they have won the game.
 
 ## ZK Battleship Privacy

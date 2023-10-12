@@ -65,7 +65,7 @@ private_key: APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc
 address: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg
 ```
 
-Let's make some bank transactions. We'll take the role of the bank and issue 100 tokens to the user. We swap the private key into `.env` and run the issue transition function. The inputs are simply the recipient of the issuance and the amount.
+Let's make some bank transactions. We'll take the role of the bank and issue 100 tokens to the user. We swap the private key into `.env` and run the `issue` transition function. The inputs are simply the recipient of the issuance and the amount.
 
 ```bash
 echo "
@@ -78,7 +78,7 @@ leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 10
 
 ## <a id="deposit"></a> Deposit Tokens
 
-Now, let's have the user deposit 50 of their tokens with the bank. We'll take the role of the user and call the deposit function, having the user use the output record that was issued to them by the bank. The inputs are the output record from the issue transition and the amount the user wishes to deposit.
+Now, let's have the user deposit 50 of their tokens with the bank. We'll take the role of the user and call the deposit function, having the user use the output record that was issued to them by the bank. The inputs are the output record from the `issue` transition and the amount the user wishes to deposit.
 
 ```bash
 echo "
@@ -93,7 +93,7 @@ leo run deposit "{
 }"  50u64
 ```
 
-You'll see that the output contains a new private record belonging to the user with 50 credits, and a finalize deposit function taking the arguments (bank address, amount) that will update a public mapping with 50 credits. This information is queryable on-chain.
+You'll see that the output contains a new private record belonging to the user with 50 credits, and a finalize `deposit` function taking the arguments (bank address, amount) that will update a public mapping with 50 credits. This information is queryable on-chain.
 
 ## <a id="wait"></a> Wait
 
@@ -103,7 +103,7 @@ You can run the calculation yourself, it comes out to 266 tokens accrued using t
 
 ## <a id="withdraw"></a> Withdraw Tokens
 
-Now, let's have the bank withdraw all tokens after 15 periods. Let's switch to the bank role, and call the withdraw transition function. The inputs are the recipient's address, amount, rate, and periods.
+Now, let's have the bank withdraw all tokens after 15 periods. Let's switch to the bank role, and call the `withdraw` transition function. The inputs are the recipient's address, amount, rate, and periods.
 
 ```bash
 echo "
@@ -114,4 +114,4 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 ```
 
-You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then calls the finalize withdraw function with arguments (address, amount), which will update the public balance of the bank back to 0. The public mapping will be queryable on-chain.
+You'll see here the withdrawal function creates a new private record for the user containing all 266 withdrawn tokens, and then calls the finalize `withdraw` function with arguments (address, amount), which will update the public balance of the bank back to 0. The public mapping will be queryable on-chain.

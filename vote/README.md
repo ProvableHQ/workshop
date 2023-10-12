@@ -25,18 +25,13 @@ cd vote
 
 The `.env` file contains a private key and address. This is the account that will be used to sign transactions and is checked for record ownership. When executing programs as different parties, be sure to set the `private_key` field in `.env` to the appropriate value. You can check out how we've set things up in `./run.sh` for a full example of how to run the program as different parties.
 
-
 ## Walkthrough
 
+* [Functions](#functions)
 * [Create a Proposal](#step0)
 * [Voter 1 makes a vote](#step1)
 * [Voter 2 makes a vote](#step2)
 * [How votes are tallied](#step3)
-
-
-
-
-
 
 ## <a id="functions"></a> Functions
 
@@ -44,69 +39,15 @@ The `.env` file contains a private key and address. This is the account that wil
 
 Anyone can issue a new proposal publicly by calling `propose` function.
 
-Run `propose`:
-
-```
-leo run propose
-```
-
-Output sample:
-
-```
- {
-  owner: aleo1kkk52quhnxgn2nfrcd9jqk7c9x27c23f2wvw7fyzcze56yahvcgszgttu2.private,
-  id: 2805252584833208809872967597325381727971256629741137995614832105537063464740field.private,
-  info: {
-    title: 2077160157502449938194577302446444field.private,
-    content: 1452374294790018907888397545906607852827800436field.private,
-    proposer: aleo1kkk52quhnxgn2nfrcd9jqk7c9x27c23f2wvw7fyzcze56yahvcgszgttu2.private
-  },
-  _nonce: 1639660347839832220966145410710039205878572956621820215177036061076060242021group.public
-}
-```
-
 ### Create Ticket
 
 Proposers can create new tickets for proposed proposals.
 
-Ticket is a record with `owner` and `pid`, 
-it can be used to vote for the specific proposal - `pid`, 
-and can only be used(voted) by the ticket `owner`.
-
-Run `new_ticket`:
-
-```
-leo run new_ticket
-```
-
-Output sample:
-
-```
-{
-  owner: aleo1kkk52quhnxgn2nfrcd9jqk7c9x27c23f2wvw7fyzcze56yahvcgszgttu2.private,
-  pid: 2264670486490520844857553240576860973319410481267184439818180411609250173817field.private,
-  _nonce: 1637267040221574073903539416642641433705357302885235345311606754421919550724group.public
-}
-```
+Ticket is a record with `owner` and `pid`, it can be used to vote for the specific proposal - `pid`, and can only be used(voted) by the ticket `owner`.
 
 ### Vote
 
-A ticket owner can use their ticket record to vote `agree` / `disagree` with the specific proposal - `pid`.
-
-Since the ticket record can be used as an input privately, the voter's privacy is protected.
-
-Run `agree`:
-
-```
-leo run agree
-```
-
-Run `disagree`:
-
-```
-leo run disagree
-```
-
+A ticket owner can use their ticket record to vote `agree` / `disagree` with the specific proposal - `pid`. Since the ticket record can be used as an input privately, the voter's privacy is protected.
 
 ## <a id="step0"></a> Create a Proposal
 
@@ -169,7 +110,7 @@ leo run agree "{
 
 ## <a id="step2"></a> Voter 2 makes a vote
 
-Let's create a new private ticket for voter 2. Take on the role of voter 1 and run the new_ticket transition. The inputs take a unique ticket ID and the voter's public address.
+Let's create a new private ticket for voter 2. Take on the role of voter 1 and run the `new_ticket` transition. The inputs take a unique ticket ID and the voter's public address.
 
 ```bash
 echo "
