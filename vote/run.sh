@@ -23,7 +23,7 @@ address: aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
 "
 
 echo "
-Let's propose a new ballot. Take on the role of the proposer and run the propose transition function. You'll see in the proposal inputs in vote.in that serve as the input for the call.
+Let's propose a new ballot. Take on the role of the proposer and run the propose transition function. We've provided the necessary information as inputs to the propose function.
 
 echo '
 NETWORK=testnet3
