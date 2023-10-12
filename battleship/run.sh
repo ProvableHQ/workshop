@@ -70,6 +70,7 @@ leo run offer_battleship '{
   _nonce: 605849623036268790365773177565562473735086364071033205649960161942593750353group.public
 }'
 "
+
 leo run offer_battleship "{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
   hits_and_misses: 0u64.private,
