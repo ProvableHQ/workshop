@@ -38,7 +38,7 @@ Can you find any others?
 The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
 
 ```bash
-cd auction
+cd basic_bank
 ./run.sh
 ```
 
