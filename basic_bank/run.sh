@@ -41,7 +41,7 @@ leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 10
 echo "
 ###############################################################################
 ########                                                               ########
-########         Initialize 100 tokens for aleo1zeklp...v46ngg         ########
+########   Step 0: Initialize 100 tokens for aleo1zeklp...v46ngg       ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |      ACTION     |        AMOUNT       |           ########
@@ -114,7 +114,7 @@ You'll see that the output contains a new private record belonging to the user w
 echo "
 ###############################################################################
 ########                                                               ########
-########            aleo1zeklp...v46ngg deposits 50 tokens             ########
+########        Step 1: aleo1zeklp...v46ngg deposits 50 tokens         ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |      ACTION     |        AMOUNT       |           ########
@@ -157,7 +157,7 @@ With the 50 token deposit, let's say 15 periods of time pass with compounding in
 
 ###############################################################################
 ########                                                               ########
-########                        Wait 15 periods                        ########
+########                   Step 2: Wait 15 periods                     ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |      ACTION     |        AMOUNT       |           ########
@@ -222,7 +222,7 @@ You'll see here the withdrawal function creates a new private record for the use
 echo "
 ###############################################################################
 ########                                                               ########
-########      Withdraw tokens of aleo1zeklp...v46ngg w/ interest       ########
+########  Step 3: Withdraw tokens of aleo1zeklp...v46ngg w/ interest   ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |      ACTION     |        AMOUNT       |           ########

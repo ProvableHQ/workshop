@@ -35,7 +35,9 @@ Can you find any others?
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
+
+This basic bank program can be run using the following bash script. Locally, it will execute Leo program functions to issue, deposit, and withdraw tokens between a bank and a user.
 
 ```bash
 cd basic_bank
@@ -46,10 +48,10 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Issue Tokens](#issue)
-* [Deposit Tokens](#deposit)
-* [Wait](#wait)
-* [Withdraw Tokens](#withdraw)
+* [Step 0: Issue Tokens](#issue)
+* [Step 1: Deposit Tokens](#deposit)
+* [Step 2: Wait](#wait)
+* [Step 3: Withdraw Tokens](#withdraw)
 
 ## <a id="issue"></a> Issue Tokens
 

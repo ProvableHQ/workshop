@@ -32,12 +32,9 @@ The auction is conducted in a series of stages.
 - `assert_eq`
 - record ownership
 
-## Setup
-
-### 1. Install Leo
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
 ## How to Run
+
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
 
 This auction program can be run using the following bash script. Locally, it will execute Leo program functions to conduct, bid, and close a three party auction.
 
