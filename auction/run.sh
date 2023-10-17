@@ -27,7 +27,7 @@ Let's start an auction!
 
 ###############################################################################
 ########                                                               ########
-########               Initialize a new 2-party auction                ########
+########           Step 0: Initialize a new 2-party auction            ########
 ########                                                               ########
 ########                -------------------------------                ########
 ########                |  OPEN   |    A    |    B    |                ########
@@ -63,7 +63,7 @@ leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2k
 echo "
 ###############################################################################
 ########                                                               ########
-########             The first bidder places a bid of 10               ########
+########         Step 1: The first bidder places a bid of 10           ########
 ########                                                               ########
 ########                -------------------------------                ########
 ########                |  OPEN   |    A    |    B    |                ########
@@ -97,7 +97,7 @@ leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta
 echo "
 ###############################################################################
 ########                                                               ########
-########             The second bidder places a bid of 90              ########
+########          Step 2: The second bidder places a bid of 90         ########
 ########                                                               ########
 ########                -------------------------------                ########
 ########                |  OPEN   |    A    |    B    |                ########
@@ -155,7 +155,7 @@ leo run resolve "{
 echo "
 ###############################################################################
 ########                                                               ########
-########           The auctioneer determines the winning bidder        ########
+########     Step 3: The auctioneer determines the winning bidder      ########
 ########                                                               ########
 ########                -------------------------------                ########
 ########                |  OPEN   |    A    |  → B ←  |                ########

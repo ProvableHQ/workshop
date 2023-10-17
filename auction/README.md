@@ -35,14 +35,11 @@ The auction is conducted in a series of stages.
 ## Setup
 
 ### 1. Install Leo
-Follow the [Leo Installation Instructions](./01_installation.md).
-
-### 2. Download the auction example code
-Clone the source code for the auction example from [Github](https://github.com/AleoHQ/workshop/tree/master/auction).
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+This auction program can be run using the following bash script. Locally, it will execute Leo program functions to conduct, bid, and close a three party auction.
 
 ```bash
 cd auction
