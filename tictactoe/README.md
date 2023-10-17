@@ -26,7 +26,9 @@ The game board is represented by a struct called `Board`, which contains three `
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
+
+This tictactoe program can be run using the following bash script. Locally, it will execute Leo program functions to create and play a game of Tic Tac Toe.
 
 ```bash
 cd tictactoe
@@ -35,11 +37,11 @@ cd tictactoe
 
 ## Walkthrough
 
-* [Create a new board.](#step0)
-* [Player 1 makes a move.](#step1)
-* [Player 2 makes a move.](#step2)
-* [Player 3 makes a move.](#step3)
-* [and so on...](#step4)
+* [Step 0: Create a new board.](#step0)
+* [Step 1: Player 1 makes the first move.](#step1)
+* [Step 2: Player 2 makes the second move.](#step2)
+* [Step 3: Player 1 makes the third move.](#step3)
+* [Step 4: and so on...](#step4)
 
 ## <a id="step0"></a> Create a new board.
 
