@@ -16,7 +16,9 @@ Proposal information and voting results are revealed using the public `mapping` 
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
+
+This vote program can be run using the following bash script. Locally, it will execute Leo program functions to create proposals, create tickets, and make votes.
 
 ```bash
 cd vote
@@ -28,10 +30,10 @@ The `.env` file contains a private key and address. This is the account that wil
 ## Walkthrough
 
 * [Functions](#functions)
-* [Create a Proposal](#step0)
-* [Voter 1 makes a vote](#step1)
-* [Voter 2 makes a vote](#step2)
-* [How votes are tallied](#step3)
+* [Step 0: Create a Proposal](#step0)
+* [Step 1: Voter 1 issues a ticket and makes a vote](#step1)
+* [Step 2: Voter 2 issues a ticket and makes a vote](#step2)
+* [Step 3: How votes are tallied](#step3)
 
 ## <a id="functions"></a> Functions
 
