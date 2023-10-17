@@ -7,7 +7,10 @@ A transparent & shielded custom token in Leo.
 
 ## How to Run
 
-The example should work out of the box. We recommend running the entire script, and then creating your own accounts to replicate the functionality. Run the entire script:
+Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
+
+This auction program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately.
+
 
 ```bash
 cd token
@@ -18,12 +21,12 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Public Mint](#step0)
-* [Private Mint](#step1)
-* [Public Transfer](#step2)
-* [Private Transfer](#step3)
-* [Public to Private Transfer](#step4)
-* [Private to Public Transfer](#step5)
+* [Step 0: Public Mint](#step0)
+* [Step 1: Private Mint](#step1)
+* [Step 2: Public Transfer](#step2)
+* [Step 3: Private Transfer](#step3)
+* [Step 4: Public to Private Transfer](#step4)
+* [Step 5: Private to Public Transfer](#step5)
 
 We'll be conducting a transfer between two parties.
 

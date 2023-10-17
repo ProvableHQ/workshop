@@ -41,7 +41,7 @@ You can see the output of the finalize function of mint_public, which takes the 
 
 ###############################################################################
 ########                                                               ########
-########     STEP 1: Publicly mint 100 tokens for Alice                ########
+########     STEP 0: Publicly mint 100 tokens for Alice                ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |            PUBLIC BALANCES            |           ########
@@ -87,7 +87,7 @@ The output is a private record.
 
 ###############################################################################
 ########                                                               ########
-########     STEP 2: Privately mint 100 tokens for Bob                 ########
+########     STEP 1: Privately mint 100 tokens for Bob                 ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |            PUBLIC BALANCES            |           ########
@@ -133,7 +133,7 @@ Again, we see the arguments used for the finzalize function of transfer_public -
 
 ###############################################################################
 ########                                                               ########
-########     STEP 3: Publicly transfer 10 tokens from Alice to Bob     ########
+########     STEP 2: Publicly transfer 10 tokens from Alice to Bob     ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |            PUBLIC BALANCES            |           ########
@@ -187,7 +187,7 @@ The output of transfer_private is a record owned by Bob less the 20 tokens he pr
 
 ###############################################################################
 ########                                                               ########
-########     STEP 4: Privately transfer 20 tokens from Bob to Alice    ########
+########     STEP 3: Privately transfer 20 tokens from Bob to Alice    ########
 ########                                                               ########
 ########           -----------------------------------------           ########
 ########           |            PUBLIC BALANCES            |           ########
@@ -233,7 +233,7 @@ When calling transfer_public_to_private, we see the finalize function with the a
 
 ###############################################################################
 ########                                                               ########
-########     STEP 5: Convert 30 public tokens from Alice into 30       ########
+########     STEP 4: Convert 30 public tokens from Alice into 30       ########
 ########             private tokens for Bob.                           ########
 ########                                                               ########
 ########           -----------------------------------------           ########
@@ -288,7 +288,7 @@ When we call transfer_private_to_public, we take Bob's private record that conta
 
 ###############################################################################
 ########                                                               ########
-########     STEP 6: Convert 40 private tokens from Bob into 40        ########
+########     STEP 5: Convert 40 private tokens from Bob into 40        ########
 ########             public tokens for Alice.                          ########
 ########                                                               ########
 ########           -----------------------------------------           ########
