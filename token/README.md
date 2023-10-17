@@ -9,7 +9,7 @@ A transparent & shielded custom token in Leo.
 
 Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
 
-This auction program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately.
+This token program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately.
 
 
 ```bash
