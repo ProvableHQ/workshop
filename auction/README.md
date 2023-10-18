@@ -57,14 +57,14 @@ The `.env` file contains a private key and address. This is the account that wil
 The three parties we'll be emulating are as follows:
 
 ```markdown
-Bidder 1 Private Key:  
+First Bidder Private Key:  
 APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
-Bidder 1 Address: 
+First Bidder Address: 
 aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke
 
-Bidder 2 Private Key:
+Second Bidder Private Key:
 APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
-Bidder 2 Address:
+Second Bidder Address:
 aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4
 
 Auctioneer Private Key:
@@ -86,7 +86,7 @@ PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
 " > .env
 ```
 
-Call the `place_bid` program function with bidder 1 and `10u64` arguments.
+Call the `place_bid` program function with the first bidder and `10u64` arguments.
 
 ```bash
 leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64
@@ -105,7 +105,7 @@ PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
 " > .env
 ```
 
-Call the `place_bid` program function with bidder 2 and `90u64` arguments.
+Call the `place_bid` program function with the second bidder and `90u64` arguments.
 
 ```bash
 leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64

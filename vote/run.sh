@@ -79,13 +79,13 @@ PRIVATE_KEY=APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
 leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
 "
 
-# swaps in the private key of voter 1 to .env
+# Swap in the private key of voter 1 to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
 " > .env
 
-# runs the new_ticket transition function with unique id and voter address as inputs
+# Runs the new_ticket transition function with unique id and voter address as inputs.
 leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
 
 echo "
@@ -147,13 +147,13 @@ PRIVATE_KEY=APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
 leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
 "
 
-# swaps in the private key of voter 2 to .env
+# Swap in the private key of voter 2 to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
 " > .env
 
-# runs the new_ticket transition function with unique id and voter address as inputs
+# Run the new_ticket transition function with unique id and voter address as inputs.
 leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
 
 echo "

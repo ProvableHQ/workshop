@@ -29,13 +29,13 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64
 "
 
-# swaps in the private key of the bank to .env
+# Swap in the private key of the bank to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 
-# runs the issue transition with inputs (user address, amount)
+# Have the bank issue 100 tokens to the user.
 leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64
 
 echo "
@@ -94,13 +94,13 @@ leo run deposit '{
 }'  50u64
 "
 
-# swaps in the private key of the user to .env
+# Swap in the private key of the user to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkp75cpr5NNQpVWc5mfsD9Uf2wg6XvHknf82iwB636q3rtc
 " > .env
 
-# runs the deposit transition with inputs (private record with credits, amount)
+# Have the user deposit 50 tokens into the bank.
 leo run deposit "{
     owner: aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg.private,
     amount: 100u64.private,
@@ -206,13 +206,13 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 
 "
-# swaps in the private key of the bank to .env
+# Swap in the private key of the bank to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 " > .env
 
-# runs the withdraw transition with inputs (recipient, amount, rate, periods)
+# Have the bank withdraw all of the user's tokens with compound interest over 15 periods at 12.34%.
 leo run withdraw aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 50u64 1234u64 15u64
 
 echo "

@@ -9,11 +9,11 @@ fi
 echo "
 We will be playing the role of these two parties:
 
-The private key and address of player 1.
+The private key and address of Player 1.
 private_key: APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 address: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy
 
-The private key and address of player 2.
+The private key and address of Player 2.
 private_key: APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 address: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 "
@@ -43,7 +43,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-With player 1's private key, they initialize the board with the placement of 4 ships and the opponent's public address.
+With Player 1's private key, they initialize the board with the placement of 4 ships and the opponent's public address.
 
 leo run initialize_board 34084860461056u64 551911718912u64 7u64 1157425104234217472u64 aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 "
@@ -57,7 +57,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-Player 1 "passes the board" as an offer to play battleship with player 2.
+Player 1 "passes the board" as an offer to play battleship with Player 2.
 
 leo run offer_battleship '{
   owner: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy.private,
@@ -89,7 +89,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-We switch our .env to player 2's private key and similarly run initialize_board to create a new and different board for player two. 
+We switch our .env to Player 2's private key and similarly run initialize_board to create a new and different board for player two.
 
 echo '
 NETWORK=testnet3
@@ -113,7 +113,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-Player 2 accepts player 1's offer to play and starts a game of battleship.
+Player 2 accepts Player 1's offer to play and starts a game of battleship.
 
 leo run start_battleship '{
   owner: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry.private,
@@ -159,7 +159,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-We switch the .env back to player 1, and we run the transition function play.
+We switch the .env back to Player 1, and we run the transition function play.
 
 echo '
 NETWORK=testnet3
@@ -215,7 +215,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-We switch the .env back to player 2, and we run the transition function play.
+We switch the .env back to Player 2, and we run the transition function play.
 
 echo '
 NETWORK=testnet3
@@ -271,7 +271,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-We switch the .env back to player 1, and we run the transition function play.
+We switch the .env back to Player 1, and we run the transition function play.
 
 echo '
 NETWORK=testnet3
@@ -327,7 +327,7 @@ echo "
 ########                                                               ########
 ###############################################################################
 
-We switch the .env back to player 2, and we run the transition function play.
+We switch the .env back to Player 2, and we run the transition function play.
 
 echo '
 NETWORK=testnet3

@@ -7,7 +7,7 @@ then
 fi
 
 echo "
-Here we'll play a game of tic tac toe.
+Let's play a game of tic tac toe.
 
 We generate the board, and then the player take turns executing the transition function make_move.
 
@@ -37,7 +37,7 @@ echo "
 "
 
 echo "
-Have player 1 make the first move.
+Have Player 1 make the first move.
 
 leo run make_move 1u8 1u8 1u8 '{ r1: { c1: 0u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -57,7 +57,7 @@ echo "
 "
 
 echo "
-Have player 2 make the second move.
+Have Player 2 make the second move.
 
 leo run make_move 2u8 2u8 2u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 0u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -77,7 +77,7 @@ echo "
 "
 
 echo "
-Have player 1 make the third move.
+Have Player 1 make the third move.
 
 leo run make_move 1u8 3u8 1u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 0u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -97,7 +97,7 @@ echo "
 "
 
 echo "
-Have player 2 make the fourth move.
+Have Player 2 make the fourth move.
 
 leo run make_move 2u8 2u8 1u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 0u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -117,7 +117,7 @@ echo "
 "
 
 echo "
-Have player 1 make the fifth move.
+Have Player 1 make the fifth move.
 
 leo run make_move 1u8 2u8 3u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 0u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -137,7 +137,7 @@ echo "
 "
 
 echo "
-Have player 2 make the sixth move.
+Have Player 2 make the sixth move.
 
 leo run make_move 2u8 1u8 2u8 '{ r1: { c1: 1u8, c2: 0u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -157,7 +157,7 @@ echo "
 "
 
 echo "
-Have player 1 make the seventh move.
+Have Player 1 make the seventh move.
 
 leo run make_move 1u8 3u8 2u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 0u8, c3: 0u8 } }'
 "
@@ -178,7 +178,7 @@ echo "
 
 
 echo "
-Have player 2 make the eighth move.
+Have Player 2 make the eighth move.
 
 leo run make_move 2u8 3u8 3u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 0u8 } }'
 "
@@ -198,7 +198,7 @@ echo "
 "
 
 echo "
-Have player 1 make the ninth move.
+Have Player 1 make the ninth move.
 
 leo run make_move 1u8 1u8 3u8 '{ r1: { c1: 1u8, c2: 2u8, c3: 0u8 }, r2: { c1: 2u8, c2: 2u8, c3: 1u8 }, r3: { c1: 1u8, c2: 1u8, c3: 2u8 } }'
 "

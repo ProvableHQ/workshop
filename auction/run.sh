@@ -39,9 +39,9 @@ Let's start an auction!
 "
 
 echo "
-Let's take the role of bidder 1 - we'll swap in the private key and address of the first bidder to .env.
+Let's take the role of the first bidder - we'll swap in the private key and address of the first bidder to .env.
 
-We're going to run the transition function "place_bid", slotting in bidder 1's public address and the amount that is being bid. The inputs are the user's public address and the amount being bid. 
+We're going to run the transition function "place_bid", slotting in the first bidder's public address and the amount that is being bid. The inputs are the user's public address and the amount being bid.
 
 echo '
 NETWORK=testnet3
@@ -51,13 +51,13 @@ PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
 leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64
 "
 
-# swaps in the private key of bidder 1 to .env
+# Swap in the private key of the first bidder to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
 " > .env
 
-# runs the place_bid transition with inputs (user address, amount)
+# Have the first bidder place a bid of 10.
 leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64
 
 echo "
@@ -75,7 +75,7 @@ echo "
 "
 
 echo "
-Now we're going to place another bid as bidder 2, so let's switch our keys to bidder 2 and run the same transition function, this time with bidder 2's keys, public address, and different amount.
+Now we're going to place another bid as the second bidder, so let's switch our keys to the second bidder and run the same transition function, this time with the second bidder's keys, public address, and different amount.
 
 echo '
 NETWORK=testnet3
@@ -85,13 +85,13 @@ PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
 leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64
 "
 
-# swaps in the private key of bidder 2 to .env
+# Swap in the private key of the second bidder to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
 " > .env
 
-# runs the place_bid transition with inputs (user address, amount)
+# Have the second bidder place a bid of 90.
 leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64
 
 echo "
@@ -131,13 +131,13 @@ leo run resolve '{
     }'
 "
 
-# swaps in the private key of the auctioneer to .env
+# Swaps in the private key of the auctioneer to .env.
 echo "
 NETWORK=testnet3
 PRIVATE_KEY=APrivateKey1zkp5wvamYgK3WCAdpBQxZqQX8XnuN2u11Y6QprZTriVwZVc
 " > .env
 
-# runs the resolve transition with inputs (two bid output records)
+# Have the auctioneer select the winning bid.
 leo run resolve "{
         owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
         bidder: aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke.private,
@@ -178,7 +178,7 @@ leo run finish '{
     }'
 "
 
-# runs the finish transition with the winning bid as the input
+# Have the auctioneer finish the auction.
 leo run finish "{
         owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
         bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,

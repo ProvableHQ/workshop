@@ -53,11 +53,11 @@ In order to play battleship, there must be two players with two boards. Players 
 We will be playing the role of these two parties:
 
 ```bash
-The private key and address of player 1.
+The private key and address of Player 1.
 private_key: APrivateKey1zkpGKaJY47BXb6knSqmT3JZnBUEGBDFAWz2nMVSsjwYpJmm
 address: aleo15g9c69urtdhvfml0vjl8px07txmxsy454urhgzk57szmcuttpqgq5cvcdy
 
-The private key and address of player 2.
+The private key and address of Player 2.
 private_key: APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 address: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 ```
@@ -65,7 +65,7 @@ address: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 ## 2. Player 1 Places Ships on the Board
 Now, we need to make a board as Player 1. See the [modeling the boards and ships](#modeling-the-board-and-ships) section for information on valid ship bitstrings and placements on the board.
 
-With player 1's private key, they initialize the board with the placement of 4 ships and the opponent's public address.
+With Player 1's private key, they initialize the board with the placement of 4 ships and the opponent's public address.
 
 ```bash
 echo "
@@ -108,7 +108,7 @@ or laid out in columns and rows:
 ```
 
 ## 3: Player 1 Passes The Board To Player 2
-Now, we can offer a battleship game to player 2. Run `offer_battleship` with the record you just created:
+Now, we can offer a battleship game to Player 2. Run `offer_battleship` with the record you just created:
 
 ```
 leo run offer_battleship "{
@@ -152,7 +152,7 @@ The first output record is the updated `board_state.record`. Notice the `game_st
 
 ## 4: Player 2 Places Ships On The Board
 
-We switch our .env to player 2's private key and similarly run initialize_board to create a new and different board for player two.
+We switch our .env to Player 2's private key and similarly run initialize_board to create a new and different board for player two.
 
 ```bash
 echo "
@@ -244,7 +244,7 @@ Notice the outputs here are similar to `offer_battleship`. A dummy `move.record`
 
 ## 6: Player 1 Takes The 1st Turn
 
-We switch the .env back to player 1, and we run the transition function play.
+We switch the .env back to Player 1, and we run the transition function play.
 
 ```bash
 echo "
@@ -300,7 +300,7 @@ Player 1 has an updated `board_state.record` - they have a new `played_tiles` bi
 
 ## 7: Player 2 Takes The 2nd Turn
 
-We switch the .env back to player 2, and we run the transition function play.
+We switch the .env back to Player 2, and we run the transition function play.
 
 ```bash
 echo "
@@ -361,7 +361,7 @@ Player 1's next move will consume this `move.record`, which will update Player 1
 
 ## 8: Player 1 Takes The 3rd Turn
 
-We switch the .env back to player 1, and we run the transition function play.
+We switch the .env back to Player 1, and we run the transition function play.
 
 ```bash
 echo "
@@ -429,7 +429,7 @@ The `board_state.record` `hits_and_misses` field has also been updated with the 
 
 ## 9: Player 2 Takes The 4th Turn
 
-We switch the .env back to player 2, and we run the transition function play.
+We switch the .env back to Player 2, and we run the transition function play.
 
 ```bash
 echo "
