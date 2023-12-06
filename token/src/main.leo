@@ -1,5 +1,5 @@
 // The `program` scope defines the data types, functions, and state associated with the `token` program.
-program token.aleo {
+program simple_token_1i3muyd.aleo {
     // On-chain storage of an `account` map, with `address` as the key,
     // and `u64` as the value.
     mapping account: address => u64;
@@ -10,6 +10,25 @@ program token.aleo {
         // The token amount.
         amount: u64,
     }
+
+    /* Burn */
+    transition burn_public(public receiver: address, public amount_to_burn: u64) {
+      return then finalize(receiver, amount_to_burn);
+    }
+    
+    finalize burn_public(public owner: address, amount_to_burn: u64) {
+      let amount: u64 = Mapping::get_or_use(account, owner, 0u64);
+      Mapping::set(account, owner, amount - amount_to_burn);
+    }
+
+    transition burn_private(token_to_burn: token, amount: u64) -> token {
+      let difference: u64 = token_to_burn.amount - amount;
+      return token {
+        owner: token_to_burn.owner,
+        amount: difference,
+      };
+    }
+
 
     /* Mint */
 
