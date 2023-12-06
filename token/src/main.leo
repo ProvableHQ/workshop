@@ -1,5 +1,5 @@
 // The `program` scope defines the data types, functions, and state associated with the `token` program.
-program simple_token_1i3muyd.aleo {
+program token.aleo {
     // On-chain storage of an `account` map, with `address` as the key,
     // and `u64` as the value.
     mapping account: address => u64;
