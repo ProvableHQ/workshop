@@ -38,17 +38,21 @@ program vote.aleo {
         // Generate a new proposal id.
         let id: field = BHP256::hash_to_field(info.title);
 
+        // Produce a proposal record for the proposer.
+        let new: Proposal = Proposal {
+                      owner: self.caller,
+                      id,
+                      info,
+        };
+        
 
         // Return a new record for the proposal.
-        // Finalize the proposal id.
-        return Proposal {
-            owner: self.caller,
-            id,
-            info,
-        } then finalize(id);
+        // Finalize the proposal id and info.
+        return new then finalize(id, info);
     }
-    // Create a new proposal in the "tickets" mapping.
-    finalize propose(public id: field) {
+    // Create a new proposal in the "proposals" and "tickets" mappings.
+    finalize propose(public id: field, public info: ProposalInfo) {
+        Mapping::set(proposals, id, info);
         Mapping::set(tickets, id, 0u64);
     }
 
