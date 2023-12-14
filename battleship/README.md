@@ -357,7 +357,7 @@ This contains only the result of Player 1's previous fire coordinate they had se
 
 If you check Player 2's ships configuration, you'll note their entire bottom row is covered by two ships, so sample valid hits on the bottom row would be: 1u64, 2u64, 4u64, 8u64, 16u64, 32u64, 64u64, and 128u64. Since Player 1's first fire coordinate (1u64) was a hit, the `hits_and_misses` field is also 1u64.
 
-Player 1's next move will consume this `move.record`, which will update Player 1's board with the hit-or-miss, as well as figure out the result of Player 2's fire coordinate. Now that Player 1 has some `played_tiles`, they can no longer choose an alread-played fire coordinate. For example, running `aleo run play 'board_state.record' 'move.record' 1u64` will fail, because 1u64 has already been played.
+Player 1's next move will consume this `move.record`, which will update Player 1's board with the hit-or-miss, as well as figure out the result of Player 2's fire coordinate. Now that Player 1 has some `played_tiles`, they can no longer choose an already-played fire coordinate. For example, running `aleo run play 'board_state.record' 'move.record' 1u64` will fail, because 1u64 has already been played.
 
 ## 8: Player 1 Takes The 3rd Turn
 
@@ -487,7 +487,7 @@ Play continues back and forth between Player 1 and Player 2. When one player has
 
 ## ZK Battleship Privacy
 
-How can we ensure that the ship configurations of each player remains secret,
+How can we ensure that the ship configurations of each player remain secret,
 while being able to trustlessly and fairly play with their opponent?
 By taking advantage of selective privacy powered by zero knowledge proofs on Aleo.
 
@@ -713,7 +713,7 @@ bit count = C mod 255u64
 
 ### Adjacency Check
 
-Given a ship's placement on the board and its bitstring representation (horizontally or vertically), we can determine if the bits are adjacent. Follow the c_adjacency_check closure in verify.aleo. Given the ship of length 2, we know it's horizontal bitstring is 11 (3u64) and it's vertical bitstring is 100000001 (257u64). If on the board, the ship starts at the bottom right corner, its horizontal ship placement string would be:  
+Given a ship's placement on the board and its bitstring representation (horizontally or vertically), we can determine if the bits are adjacent. Follow the c_adjacency_check closure in verify.aleo. Given the ship of length 2, we know its horizontal bitstring is 11 (3u64) and its vertical bitstring is 100000001 (257u64). If on the board, the ship starts at the bottom right corner, its horizontal ship placement string would be:  
 3u64
 ```
 0 0 0 0 0 0 0 0  
