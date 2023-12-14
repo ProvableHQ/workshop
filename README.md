@@ -25,14 +25,14 @@
 
 ## Build Guide
 
-The following steps will install Aleo and Leo on your machine. This workshop is compatible on macOS, Linux, and Windows machines.
+The following steps will install Aleo and Leo on your machine. This workshop is compatible with macOS, Linux, and Windows machines.
 
 ### Prerequisites
 
 This workshop requires the following prerequisites.
 
 - Install `git` with [bit.ly/start-git](https://bit.ly/start-git)
-- Install `Rust`with [bit.ly/start-rust](https://bit.ly/start-rust)
+- Install `Rust` with [bit.ly/start-rust](https://bit.ly/start-rust)
 
 ### Installation
 
@@ -139,7 +139,7 @@ cd tictactoe && ./run.sh
 
 A transparent & shielded custom token in Leo.
 
-To see an example of minting and transfering tokens, run:
+To see an example of minting and transferring tokens, run:
 ```
 cd token && ./run.sh
 ```
