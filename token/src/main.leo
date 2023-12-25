@@ -126,4 +126,34 @@ program token.aleo {
         let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
         Mapping::set(account, sender, sender_amount - amount);
     }
+
+    transition burn_public(public amount: u64) -> token {
+       // Produce a burn token record for the token receiver.
+       let burn: token = token {
+        owner: self.caller,
+        amount: amount
+       };
+
+        // Output the burnt record.
+        // Decrement the token amount of the caller publicly
+        return burn then finalize(self.caller, amount);
+    }
+
+    finalize burn_public(public sender: address, public amount: u64) {
+         // Decrements `acount[sender]` by `amount`
+         // If `account[sender]` does not exist, it will be created (Technically should already be created)
+         // If `account[sender] - amount` underflows, `burnt_public` is reverted.
+         let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
+        Mapping::set(account, sender, sender_amount - amount);
+    }
+
+     transition burn_private(amount: u64) -> token {
+        // Produce a burn token record for the token receiver.
+       let burn: token = token {
+        owner: self.caller,
+        amount: amount
+       };
+
+       return burn;
+    }
 }

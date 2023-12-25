@@ -311,3 +311,96 @@ When we call transfer_private_to_public, we take Bob's private record that conta
 ########                                                               ########
 ###############################################################################
 "
+
+echo "
+Let's burn 30 of Alice's public tokens. Switch the private key back to Alice.
+
+echo '
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+' > .env
+
+leo run burn_public 30u64
+"
+
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkp1w8PTxrRgGfAtfKUSq43iQyVbdQHfhGbiNPEg2LVSEXR
+" > .env
+
+leo run burn_public 30u64
+
+echo "
+When we call burn_public, we take Alice's public record that contains 100 tokens, and outputs a record owned by Alice with 70 tokens, and calls the finalize function under burn_public with Alice's address via "self.caller" and 30 tokens as arguments. This changes the public mapping under Alice's address to contain 70 public tokens. Again, public mappings are queryable on-chain.
+
+###############################################################################
+########                                                               ########
+########     STEP 6: Burn 30 of Alice's public tokens                  ########
+########                                                               ########
+########           -----------------------------------------           ########
+########           |            PUBLIC BALANCES            |           ########
+########           -----------------------------------------           ########
+########           -----------------------------------------           ########
+########           |        Alice    |          70         |           ########
+########           -----------------------------------------           ########
+########           |        Bob      |          10         |           ########
+########           -----------------------------------------           ########
+########                                                               ########
+########           -----------------------------------------           ########
+########           |            PRIVATE BALANCES           |           ########
+########           -----------------------------------------           ########
+########           -----------------------------------------           ########
+########           |        Alice    |          20         |           ########
+########           -----------------------------------------           ########
+########           |        Bob      |          70         |           ########
+########           -----------------------------------------           ########
+########                                                               ########
+###############################################################################
+"
+
+
+echo "
+Now let's privately burn 20 tokens for Bob. Switch to Bob's private key and privately burn 20 tokens for Bob.
+
+echo '
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+' > .env
+
+leo run burn_private 20u64
+"
+
+echo "
+NETWORK=testnet3
+PRIVATE_KEY=APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
+" > .env
+
+leo run burn_private 20u64
+
+echo "
+When burn_private is called by Bob, the output is a private record where Bob's 20 tokens from his private balance will be deducted.
+
+###############################################################################
+########                                                               ########
+########     STEP 7: Burn 20 of Alice's private tokens                 ########
+########                                                               ########
+########           -----------------------------------------           ########
+########           |            PUBLIC BALANCES            |           ########
+########           -----------------------------------------           ########
+########           -----------------------------------------           ########
+########           |        Alice    |          70         |           ########
+########           -----------------------------------------           ########
+########           |        Bob      |          10         |           ########
+########           -----------------------------------------           ########
+########                                                               ########
+########           -----------------------------------------           ########
+########           |            PRIVATE BALANCES           |           ########
+########           -----------------------------------------           ########
+########           -----------------------------------------           ########
+########           |        Alice    |          20         |           ########
+########           -----------------------------------------           ########
+########           |        Bob      |          50         |           ########
+########           -----------------------------------------           ########
+########                                                               ########
+###############################################################################
+"
