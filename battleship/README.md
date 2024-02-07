@@ -1,29 +1,4 @@
-<!-- # Leo Battleship 🏴‍☠️ -->
-<img alt="workshop/battleship" width="1412" src="../.resources/battleship.png">
-
-## Contents
-
-- [Summary](#summary)
-- [Build](#how-to-build)
-- [Run](#how-to-run)
-  - [1. Initializing the Players](#1-initializing-the-players)
-  - [2: Player 1 Places Ships On The Board](#2-player-1-places-ships-on-the-board)
-  - [3: Player 1 Passes The Board To Player 2](#3-player-1-passes-the-board-to-player-2)
-  - [4: Player 2 Places Ships On The Board](#4-player-2-places-ships-on-the-board)
-  - [5: Passing The Board Back To Player 1](#5-passing-the-board-back-to-player-1)
-  - [6: Player 1 Takes The 1st Turn](#6-player-1-takes-the-1st-turn)
-  - [7: Player 2 Takes The 2nd Turn](#7-player-2-takes-the-2nd-turn)
-  - [8: Player 1 Takes The 3rd Turn](#8-player-1-takes-the-3rd-turn)
-  - [9: Player 2 Takes The 4th Turn](#9-player-2-takes-the-4th-turn)
-  - [10. Who Wins?](#10-who-wins)
-- [ZK Battleship Privacy](#zk-battleship-privacy)
-- [Modeling the Boards and Ships](#modeling-the-board-and-ships)
-- [Validating a Single Ship](#validating-a-single-ship-at-a-time)
-- [Validating all Ships](#validating-all-ships-together-in-a-single-board)
-- [Sequencing Game State](#ensure-that-players-and-boards-cannot-swap-mid-game)
-- [Preventing Double Moves](#ensure-that-each-player-can-only-move-once-before-the-next-player-can-move)
-- [Ensuring Valid Moves](#enforce-constraints-on-valid-moves-and-force-the-player-to-give-their-opponent-information-about-their-opponents-previous-move-in-order-to-continue-playing)
-- [Winning](#winning-the-game)
+# Leo Battleship
 
 ## Summary
 
@@ -35,9 +10,7 @@ This application was translated into Leo from the [zk-battleship](https://github
 
 ## How to Run
 
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
-This battleship program can be run using the following bash script. Locally, it will execute Leo program functions to create the board, place ships, and play a game of battleship.
+This battleship program can be run using the following bash script. Locally, it will execute Leo program functions to create the board, place ships, and play a game of battleship. If you run the entire script, you can read the terminal output to understand the entire story.
 
 
 ```bash
@@ -47,7 +20,9 @@ cd battleship
 
 The `.env` file contains a private key and address. This is the account that will be used to sign transactions and is checked for record ownership. When executing programs as different parties, be sure to set the `private_key` field in `.env` to the appropriate value. You can check out how we've set things up in `./run.sh` for a full example of how to run the program as different parties.
 
-## 1. Initializing the Players
+## Walkthrough 
+
+### 1. Initializing the Players
 In order to play battleship, there must be two players with two boards. Players will be represented by their Aleo address.
 
 We will be playing the role of these two parties:
@@ -62,7 +37,7 @@ private_key: APrivateKey1zkp86FNGdKxjgAdgQZ967bqBanjuHkAaoRe19RK24ZCGsHH
 address: aleo1wyvu96dvv0auq9e4qme54kjuhzglyfcf576h0g3nrrmrmr0505pqd6wnry
 ```
 
-## 2. Player 1 Places Ships on the Board
+### 2. Player 1 Places Ships on the Board
 Now, we need to make a board as Player 1. See the [modeling the boards and ships](#modeling-the-board-and-ships) section for information on valid ship bitstrings and placements on the board.
 
 With Player 1's private key, they initialize the board with the placement of 4 ships and the opponent's public address.
@@ -107,7 +82,7 @@ or laid out in columns and rows:
 0 0 0 0 0 1 1 1
 ```
 
-## 3: Player 1 Passes The Board To Player 2
+### 3: Player 1 Passes The Board To Player 2
 Now, we can offer a battleship game to Player 2. Run `offer_battleship` with the record you just created:
 
 ```
@@ -150,7 +125,7 @@ Leo ✅ Finished 'battleship.aleo/offer_battleship'
 
 The first output record is the updated `board_state.record`. Notice the `game_started` flag is now true. This board cannot be used to offer any other battleship games or accept any battleship game offers. Player 1 would need to initialize a new board and use that instead. The second output record is a dummy `move.record` - there are no fire coordinates included to play on Player 2's board, and no information about any previous Player 2 moves (Player 2 has not made any moves yet). This `move.record` is owned by Player 2, who must use that in combination with their own `board_state.record` to accept the game. Let's do that now.
 
-## 4: Player 2 Places Ships On The Board
+### 4: Player 2 Places Ships On The Board
 
 We switch our .env to Player 2's private key and similarly run initialize_board to create a new and different board for player two.
 
@@ -191,7 +166,7 @@ Note, the output ships here is 9044591273705727u64, which in a bitstring is:
 1 1 1 1 1 1 1 1
 ```
 
-## 5: Passing The Board Back To Player 1
+### 5: Passing The Board Back To Player 1
 
 Now, we can accept Player 1's offer. Run `start_battleship`:
 
@@ -242,7 +217,7 @@ leo run start_battleship "{
 
 Notice the outputs here are similar to `offer_battleship`. A dummy `move.record` is owned by Player 1, and Player 2 gets a `board_state.record` with the `game_started` flag updated. However, now that Player 1 has a `move.record` and a started board, they can begin to play.
 
-## 6: Player 1 Takes The 1st Turn
+### 6: Player 1 Takes The 1st Turn
 
 We switch the .env back to Player 1, and we run the transition function play.
 
@@ -298,7 +273,7 @@ leo run play "{
 
 Player 1 has an updated `board_state.record` - they have a new `played_tiles` bitstring, which corresponds to the fire coordinate they just sent to Player 2. You can see that the `incoming_fire_coordinate` in the `move.record` owned by Player 2 matches exactly the input given by Player 1. Player 2 can now play this move tile and respond with a fire coordinate of their own, and they will also let Player 1 know whether their fire coordinate hit or miss Player 2's ships.
 
-## 7: Player 2 Takes The 2nd Turn
+### 7: Player 2 Takes The 2nd Turn
 
 We switch the .env back to Player 2, and we run the transition function play.
 
@@ -359,7 +334,7 @@ If you check Player 2's ships configuration, you'll note their entire bottom row
 
 Player 1's next move will consume this `move.record`, which will update Player 1's board with the hit-or-miss, as well as figure out the result of Player 2's fire coordinate. Now that Player 1 has some `played_tiles`, they can no longer choose an alread-played fire coordinate. For example, running `aleo run play 'board_state.record' 'move.record' 1u64` will fail, because 1u64 has already been played.
 
-## 8: Player 1 Takes The 3rd Turn
+### 8: Player 1 Takes The 3rd Turn
 
 We switch the .env back to Player 1, and we run the transition function play.
 
@@ -427,7 +402,7 @@ As before, both a `board_state.record` and `move.record` are created. The `board
 
 The `board_state.record` `hits_and_misses` field has also been updated with the result of their previous move. The new `move.record` owned by Player 2 now contains information about whether Player 2's previous move was a hit or miss, as well as Player 1's new fire coordinate.
 
-## 9: Player 2 Takes The 4th Turn
+### 9: Player 2 Takes The 4th Turn
 
 We switch the .env back to Player 2, and we run the transition function play.
 
@@ -481,7 +456,7 @@ leo run play "{
 ✅ Executed 'battleship.aleo/play'
 ```
 
-## 10. Who Wins?
+### 10. Who Wins?
 
 Play continues back and forth between Player 1 and Player 2. When one player has a total of 14 flipped bits in their `hits_and_misses` field on their `board_state.record`, they have won the game.
 

@@ -1,10 +1,4 @@
 #!/bin/bash
-# First check that Leo is installed.
-if ! command -v leo &> /dev/null
-then
-    echo "leo is not installed."
-    exit
-fi
 
 echo "
 We'll be conducting a transfer between two parties.

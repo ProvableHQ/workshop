@@ -1,5 +1,4 @@
-<!-- # 🏛️ Blind Auction -->
-<img alt="workshop/auction" width="1412" src="../.resources/auction.png">
+# Blind Auction
 
 A first-price sealed-bid auction in Leo.
 
@@ -28,15 +27,14 @@ The auction is conducted in a series of stages.
 - **Finishing**: In this stage, the auctioneer finishes the auction by invoking the `finish` function. This function returns the winning bid to the bidder, which the bidder can then use to claim the item.
 
 ## Language Features and Concepts
+
 - `record` declarations
 - `assert_eq`
 - record ownership
 
 ## How to Run
 
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
-This auction program can be run using the following bash script. Locally, it will execute Leo program functions to conduct, bid, and close a three party auction.
+This auction program can be run using the following bash script. Locally, it will execute Leo program functions to conduct, bid, and close a three party auction. If you run the entire script, you can read the terminal output to understand the entire story.
 
 ```bash
 cd auction
@@ -47,12 +45,7 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Step 0: Initializing the Auction](#step0)
-* [Step 1: The First Bid](#step1)
-* [Step 2: The Second Bid](#step2)
-* [Step 3: Select the Winner](#step3)
-
-## <a id="step0"></a> Step 0: Initializing the Auction
+### Step 0: Initializing the Auction
 
 The three parties we'll be emulating are as follows:
 
@@ -73,7 +66,7 @@ Auctioneer Address:
 aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh
 ```
 
-## <a id="step1"></a> Step 1: The First Bid
+### Step 1: The First Bid
 
 Have the first bidder place a bid of 10. 
 
@@ -92,7 +85,7 @@ Call the `place_bid` program function with the first bidder and `10u64` argument
 leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64
 ```
 
-## <a id="step2"></a> Step 2: The Second Bid
+### Step 2: The Second Bid
 
 Have the second bidder place a bid of 90.
 
@@ -111,7 +104,7 @@ Call the `place_bid` program function with the second bidder and `90u64` argumen
 leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64
 ```
 
-## <a id="step3"></a> Step 3: Select the Winner
+### Step 3: Select the Winner
 
 Have the auctioneer select the winning bid.
 
@@ -142,7 +135,7 @@ leo run resolve "{
 }"
 ```
 
-## <a id="step4"></a> Step 4: Finish the Auction
+### Step 4: Finish the Auction
 
 Call the `finish` transition function with the winning `Bid` record.
 

@@ -1,5 +1,4 @@
-<!-- # 🗳️ Vote -->
-<img alt="workshop/vote" width="1412" src="../.resources/vote.png">
+# Vote
 
 ## Summary
 
@@ -16,9 +15,7 @@ Proposal information and voting results are revealed using the public `mapping` 
 
 ## How to Run
 
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
-This vote program can be run using the following bash script. Locally, it will execute Leo program functions to create proposals, create tickets, and make votes.
+This vote program can be run using the following bash script. Locally, it will execute Leo program functions to create proposals, create tickets, and make votes. If you run the entire script, you can read the terminal output to understand the entire story.
 
 ```bash
 cd vote
@@ -27,15 +24,7 @@ cd vote
 
 The `.env` file contains a private key and address. This is the account that will be used to sign transactions and is checked for record ownership. When executing programs as different parties, be sure to set the `private_key` field in `.env` to the appropriate value. You can check out how we've set things up in `./run.sh` for a full example of how to run the program as different parties.
 
-## Walkthrough
-
-* [Functions](#functions)
-* [Step 0: Create a Proposal](#step0)
-* [Step 1: Voter 1 issues a ticket and makes a vote](#step1)
-* [Step 2: Voter 2 issues a ticket and makes a vote](#step2)
-* [Step 3: How votes are tallied](#step3)
-
-## <a id="functions"></a> Functions
+## Functions
 
 ### Propose
 
@@ -51,7 +40,9 @@ Ticket is a record with `owner` and `pid`, it can be used to vote for the specif
 
 A ticket owner can use their ticket record to vote `agree` / `disagree` with the specific proposal - `pid`. Since the ticket record can be used as an input privately, the voter's privacy is protected.
 
-## <a id="step0"></a> Create a Proposal
+## Walkthrough
+
+### Step 0: Create a Proposal
 
 We will be playing the role of three parties.
 
@@ -85,7 +76,7 @@ leo run propose "{
 
 You'll see that the output generates a new record with the proposal information and sets a public mapping with the proposal id as an argument input. The public mapping will be queryable on-chain.
 
-## <a id="step1"></a> Voter 1 makes a vote
+### Step 1: Voter 1 makes a vote
 
 Let's create a new private ticket to make a vote. Take on the role of voter 1 and run the `new_ticket` transition. The inputs take a unique ticket ID and the voter's public address.
 
@@ -110,7 +101,7 @@ leo run agree "{
 }"
 ```
 
-## <a id="step2"></a> Voter 2 makes a vote
+### Step 2: Voter 2 makes a vote
 
 Let's create a new private ticket for voter 2. Take on the role of voter 1 and run the `new_ticket` transition. The inputs take a unique ticket ID and the voter's public address.
 
@@ -133,6 +124,6 @@ leo run disagree "{
 }"
 ```
 
-## <a id="step3"></a> How votes are tallied
+### Step 3: How votes are tallied
 
-Votes on the ticket are private. But the sum total of the agreements and disagreements are shown on-chain in the public mapping. You can query this data on-chain.
+Votes on the ticket are private. But the sum total of the agreements and disagreements are shown on-chain in the public mapping. You can query this data on-chain when you deploy and exeecute this program on the network.

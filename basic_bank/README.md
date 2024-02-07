@@ -1,5 +1,4 @@
-<!-- # 🏦 Basic Bank -->
-<img alt="workshop/basic_bank" width="1412" src="../.resources/basic_bank.png">
+# Basic Bank
 
 A simple-interest yielding bank account in Leo.
 
@@ -8,6 +7,7 @@ A simple-interest yielding bank account in Leo.
 This program implements a bank that issues tokens to users and allows users to deposit tokens to accrue simple interest on their deposits.
 
 ### User Flow
+
 1. The bank issues users tokens via the `issue` function.
 2. A user deposits tokens via the `deposit` function.
 3. Upon a user's request to withdraw, the bank calculates the appropriate amount of compound interest and pays the user the principal and interest via the `withdraw` function.
@@ -25,6 +25,7 @@ You may have already guessed that this program has a few bugs. We list some of t
 Can you find any others?
 
 ## Language Features and Concepts
+
 - `record` declarations
 - `assert_eq`
 - core functions, e.g. `BHP256::hash`
@@ -35,9 +36,7 @@ Can you find any others?
 
 ## How to Run
 
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
-This basic bank program can be run using the following bash script. Locally, it will execute Leo program functions to issue, deposit, and withdraw tokens between a bank and a user.
+This basic bank program can be run using the following bash script. Locally, it will execute Leo program functions to issue, deposit, and withdraw tokens between a bank and a user. If you run the entire script, you can read the terminal output to understand the entire story.
 
 ```bash
 cd basic_bank
@@ -48,12 +47,7 @@ The `.env` file contains a private key and address. This is the account that wil
 
 ## Walkthrough
 
-* [Step 0: Issue Tokens](#issue)
-* [Step 1: Deposit Tokens](#deposit)
-* [Step 2: Wait](#wait)
-* [Step 3: Withdraw Tokens](#withdraw)
-
-## <a id="issue"></a> Issue Tokens
+### Step 0: Issue Tokens
 
 We will be playing the role of two parties.
 
@@ -78,7 +72,7 @@ PRIVATE_KEY=APrivateKey1zkpHtqVWT6fSHgUMNxsuVf7eaR6id2cj7TieKY1Z8CP5rCD
 leo run issue aleo1zeklp6dd8e764spe74xez6f8w27dlua3w7hl4z2uln03re52egpsv46ngg 100u64
 ```
 
-## <a id="deposit"></a> Deposit Tokens
+### Step 1: Deposit Tokens
 
 Now, let's have the user deposit 50 of their tokens with the bank. We'll take the role of the user and call the deposit function, having the user use the output record that was issued to them by the bank. The inputs are the output record from the `issue` transition and the amount the user wishes to deposit.
 
@@ -97,13 +91,13 @@ leo run deposit "{
 
 You'll see that the output contains a new private record belonging to the user with 50 credits, and a finalize `deposit` function taking the arguments (bank address, amount) that will update a public mapping with 50 credits. This information is queryable on-chain.
 
-## <a id="wait"></a> Wait
+### Step 2: Wait
 
 With the 50 token deposit, let's say 15 periods of time pass with compounding interest at a rate of 12.34% on the principal amount.
 
 You can run the calculation yourself, it comes out to 266 tokens accrued using those numbers. 
 
-## <a id="withdraw"></a> Withdraw Tokens
+### Step 3: Withdraw Tokens
 
 Now, let's have the bank withdraw all tokens after 15 periods. Let's switch to the bank role, and call the `withdraw` transition function. The inputs are the recipient's address, amount, rate, and periods.
 

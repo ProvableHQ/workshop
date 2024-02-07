@@ -1,5 +1,4 @@
-<!-- # 🪙 Token -->
-<img alt="workshop/token" width="1412" src="../.resources/token.png">
+# Token
 
 ## Summary
 
@@ -7,9 +6,7 @@ A transparent & shielded custom token in Leo.
 
 ## How to Run
 
-Follow the [Leo Installation Instructions](https://developer.aleo.org/leo/installation).
-
-This token program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately.
+This token program can be run using the following bash script. Locally, it will execute Leo program functions to mint and transfer tokens publicly and privately. If you run the entire script, you can read the terminal output to understand the entire story.
 
 
 ```bash
@@ -20,13 +17,6 @@ cd token
 The `.env` file contains a private key and address. This is the account that will be used to sign transactions and is checked for record ownership. When executing programs as different parties, be sure to set the `private_key` field in `.env` to the appropriate value. You can check out how we've set things up in `./run.sh` for a full example of how to run the program as different parties.
 
 ## Walkthrough
-
-* [Step 0: Public Mint](#step0)
-* [Step 1: Private Mint](#step1)
-* [Step 2: Public Transfer](#step2)
-* [Step 3: Private Transfer](#step3)
-* [Step 4: Public to Private Transfer](#step4)
-* [Step 5: Private to Public Transfer](#step5)
 
 We'll be conducting a transfer between two parties.
 
@@ -40,7 +30,7 @@ private_key: APrivateKey1zkpFo72g7N9iFt3JzzeG8CqsS5doAiXyFvNCgk2oHvjRCzF
 address: aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshdsf5z
 ```
 
-## <a id="step0"></a> Public Mint
+### Step 0: Public Mint
 
 Let's play Alice. Swap in her private key and publicly mint 100 tokens.
 
@@ -55,7 +45,7 @@ leo run mint_public aleo13ssze66adjjkt795z9u5wpq8h6kn0y2657726h4h3e3wfnez4vqsm30
 
 You can see the output of the finalize function of `mint_public`, which takes the arguments Alice's address and the amount of tokens to mint publicly. This information is shown on-chain and can be queried on a network.
 
-## <a id="step1"></a> Private Mint
+### Step 1: Private Mint
 
 Now let's privately mint 100 tokens for Bob. Switch to Bob's private key and privately mint 100 tokens for Bob.
 
@@ -70,7 +60,7 @@ leo run mint_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqyshd
 
 The output is a private record.
 
-## <a id="step2"></a> Public Transfer
+### Step 2: Public Transfer
 
 Let's publicly transfer 10 tokens from Alice to Bob. Swap the private key back to Alice and call the public transfer transition.
 
@@ -85,7 +75,7 @@ leo run transfer_public aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4calsrrqdaqy
 
 Again, we see the arguments used for the finalize function of `transfer_public` - Alice's address, Bob's address, and the amount to transfer. The public mapping will be queryable on-chain.
 
-## <a id="step3"></a> Private Transfer
+### Step 3: Private Transfer
 
 Let's privately transfer 20 tokens from Bob to Alice. Switch to Bob's private key and call the private transfer transition.
 
@@ -104,7 +94,7 @@ leo run transfer_private "{
 
 The output of `transfer_private` is a record owned by Bob less the 20 tokens he privately transferred to Alice, and a record owned by Alice with the 20 tokens Bob transferred to Alice.
 
-## <a id="step4"></a> Public to Private Transfer
+### Step 4: Public to Private Transfer
 
 Let's convert 30 of Alice's public tokens into 30 private tokens for Bob. Switch the private key back to Alice.
 
@@ -119,7 +109,7 @@ leo run transfer_public_to_private aleo17vy26rpdhqx4598y5gp7nvaa9rk7tnvl6ufhvvf4
 
 When calling `transfer_public_to_private`, we see the finalize function with the arguments to modify Alice's public token mapping (address, amount), and a private record created that's owned by Bob and contains 110 tokens.
 
-## <a id="step5"></a> Private to Public Transfer
+### Step 5: Private to Public Transfer
 
 Let's convert 40 of Bob's private tokens into 40 public tokens for Alice. Switch the private key back to Bob.
 
