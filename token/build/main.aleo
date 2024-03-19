@@ -12,7 +12,8 @@ mapping account:
 function mint_public:
     input r0 as address.public;
     input r1 as u64.public;
-    async mint_public r0 r1 into r2;    output r2 as token.aleo/mint_public.future;
+    async mint_public r0 r1 into r2;
+    output r2 as token.aleo/mint_public.future;
 
 finalize mint_public:
     input r0 as address.public;
@@ -32,7 +33,8 @@ function mint_private:
 function transfer_public:
     input r0 as address.public;
     input r1 as u64.public;
-    async transfer_public self.caller r0 r1 into r2;    output r2 as token.aleo/transfer_public.future;
+    async transfer_public self.caller r0 r1 into r2;
+    output r2 as token.aleo/transfer_public.future;
 
 finalize transfer_public:
     input r0 as address.public;
@@ -63,7 +65,8 @@ function transfer_private_to_public:
     input r2 as u64.public;
     sub r0.amount r2 into r3;
     cast r0.owner r3 into r4 as token.record;
-    async transfer_private_to_public r1 r2 into r5;    output r4 as token.record;
+    async transfer_private_to_public r1 r2 into r5;
+    output r4 as token.record;
     output r5 as token.aleo/transfer_private_to_public.future;
 
 finalize transfer_private_to_public:
@@ -78,7 +81,8 @@ function transfer_public_to_private:
     input r0 as address.public;
     input r1 as u64.public;
     cast r0 r1 into r2 as token.record;
-    async transfer_public_to_private self.caller r1 into r3;    output r2 as token.record;
+    async transfer_public_to_private self.caller r1 into r3;
+    output r2 as token.record;
     output r3 as token.aleo/transfer_public_to_private.future;
 
 finalize transfer_public_to_private:

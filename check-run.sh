@@ -1,6 +1,7 @@
 #!/bin/bash
 # A script to check that all examples compile and run.
 # Run this script from the root directory of the workshop repository.
+# Note that this script is expected to run successfully.
 
 # Run the auction example.
 cd auction

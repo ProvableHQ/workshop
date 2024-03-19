@@ -1,4 +1,4 @@
-// The 'vote.leo' program.
+// The 'vote.aleo' program.
 program vote.aleo {
     // Proposal details
     struct ProposalInfo {

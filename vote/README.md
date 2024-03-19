@@ -3,7 +3,7 @@
 
 ## Summary
 
-`vote.leo` is a general vote program.
+`vote.aleo` is a general vote program.
 
 Anyone can issue new proposals, proposers can issue tickets to the voters, and voters can vote without exposing their identity.
 

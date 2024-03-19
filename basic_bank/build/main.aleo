@@ -23,7 +23,8 @@ function deposit:
     sub r0.amount r1 into r2;
     cast r0.owner r2 into r3 as Token.record;
     hash.bhp256 r0.owner into r4 as field;
-    async deposit r4 r1 into r5;    output r3 as Token.record;
+    async deposit r4 r1 into r5;
+    output r3 as Token.record;
     output r5 as basic_bank.aleo/deposit.future;
 
 finalize deposit:
@@ -550,7 +551,8 @@ function withdraw:
     hash.bhp256 r0 into r4 as field;
     call calculate_interest r1 r2 r3 into r5;
     cast r0 r5 into r6 as Token.record;
-    async withdraw r4 r1 into r7;    output r6 as Token.record;
+    async withdraw r4 r1 into r7;
+    output r6 as Token.record;
     output r7 as basic_bank.aleo/withdraw.future;
 
 finalize withdraw:
