@@ -91,3 +91,24 @@ finalize transfer_public_to_private:
     get.or_use account[r0] 0u64 into r2;
     sub r2 r1 into r3;
     set r3 into account[r0];
+
+
+function burn_public:
+    input r0 as u64.public;
+    cast self.caller r0 into r1 as token.record;
+    async burn_public self.caller r0 into r2;
+    output r1 as token.record;
+    output r2 as token.aleo/burn_public.future;
+
+finalize burn_public:
+    input r0 as address.public;
+    input r1 as u64.public;
+    get.or_use account[r0] 0u64 into r2;
+    sub r2 r1 into r3;
+    set r3 into account[r0];
+
+
+function burn_private:
+    input r0 as u64.private;
+    cast self.caller r0 into r1 as token.record;
+    output r1 as token.record;
