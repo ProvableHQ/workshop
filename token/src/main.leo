@@ -107,7 +107,7 @@ program token.aleo {
 
     // The function `transfer_public_to_private` turns a specified token amount from `account` into a token record for the specified receiver.
     // This function preserves privacy for the receiver's record, however it publicly reveals the caller and the specified token amount.
-    transition transfer_public_to_private(public receiver: address, public amount: u64) -> token {
+    transition transfer_public_to_private(receiver: address, public amount: u64) -> token {
         // Produces a token record for the token receiver.
         let transferred: token = token {
             owner: receiver,
