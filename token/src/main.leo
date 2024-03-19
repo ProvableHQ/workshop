@@ -26,13 +26,44 @@ program token.aleo {
         let receiver_amount: u64 = Mapping::get_or_use(account, receiver, 0u64);
         Mapping::set(account, receiver, receiver_amount + amount);
     }
-
+   
     // The function `mint_private` initializes a new record with the specified amount of tokens for the receiver.
     transition mint_private(receiver: address, amount: u64) -> token {
         return token {
             owner: receiver,
             amount: amount,
         };
+    }
+    /* Burn */
+    // The function `burn_public` publicly removes the specified token amount from the token sender's account.
+    transition burn_public(public amount: u64) {
+    return then finalize(self.caller, amount);
+    }
+
+    finalize burn_public(public sender: address, public amount: u64) {
+    // Decrements `account[sender]` by `amount`.
+    // If `account[sender]` does not exist, it will be created.
+    // If `account[sender] - amount` underflows, `burn_public` is reverted.
+      let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
+       if sender_amount < amount {
+        panic!("Underflow error");
+      }
+      Mapping::set(account, sender, sender_amount - amount);
+    }
+    // The function `burn_private` reduces the specified token amount from the specified token record.
+    transition burn_private(sender: token, amount: u64) -> token {
+    // Checks the given token record has sufficient balance.
+    // This `sub` operation is safe, and the proof will fail if an underflow occurs.
+      let difference: u64 = sender.amount - amount;
+
+    // Produce a token record with the remaining amount for the sender.
+      let remaining: token = token {
+        owner: sender.owner,
+        amount: difference,
+      };
+
+    // Output the sender's remaining record.
+       return remaining;
     }
 
     /* Transfer */
@@ -126,4 +157,5 @@ program token.aleo {
         let sender_amount: u64 = Mapping::get_or_use(account, sender, 0u64);
         Mapping::set(account, sender, sender_amount - amount);
     }
+    
 }
