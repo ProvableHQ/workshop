@@ -10,16 +10,16 @@ echo "
 We will be playing the role of three parties.
 
 The private key and address of the proposer.
-private_key: APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
-address: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
+private_key: APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+address: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px
 
 The private key and address of voter 1.
-private_key: APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
-address: aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
+private_key: APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+address: aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
 
 The private key and address of voter 2.
-private_key: APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
-address: aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
+private_key: APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
+address: aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg
 "
 
 echo "
@@ -27,27 +27,27 @@ Let's propose a new ballot. Take on the role of the proposer and run the propose
 
 echo '
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
+PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
 ' > .env
 
 leo run propose '{ 
   title: 2077160157502449938194577302446444field, 
   content: 1452374294790018907888397545906607852827800436field, 
-  proposer: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
+  proposer: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px
 }'
 "
 
 # swaps in the private key of the proposer to .env
 echo "
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkp8wKHF9zFX1j4YJrK3JhxtyKDmPbRu9LrnEW8Ki56UQ3G
+PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
 " > .env
 
 # runs the propose transition function with proposal info as the input
 leo run propose "{ 
   title: 2077160157502449938194577302446444field, 
   content: 1452374294790018907888397545906607852827800436field, 
-  proposer: aleo1rfez44epy0m7nv4pskvjy6vex64tnt0xy90fyhrg49cwe0t9ws8sh6nhhr
+  proposer: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px
 }"
 
 echo "
@@ -73,20 +73,20 @@ Let's create a new private ticket to make a vote. Take on the role of voter 1 an
 
 echo '
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
+PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
 ' > .env
 
-leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
+leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
 "
 
 # Swap in the private key of voter 1 to .env.
 echo "
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkpHmSu9zuhyuCJqVfQE8p82HXpCTLVa8Z2HUNaiy9mrug2
+PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
 " > .env
 
 # Runs the new_ticket transition function with unique id and voter address as inputs.
-leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2
+leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
 
 echo "
 You'll see a new private ticket created belonging to the owner, and a public mapping in the vote program to track the ID of that ticket.
@@ -110,14 +110,14 @@ echo "
 Voter 1 can now vote privately on their ticket. Call the agree or disagree transition function, which takes the voter's ticket output as the input.
 
 leo run agree '{
-  owner: aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2.private,
+  owner: aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t.private,
   pid: 2264670486490520844857553240576860973319410481267184439818180411609250173817field.private,
   _nonce: 1738483341280375163846743812193292672860569105378494043894154684192972730518group.public
 }'
 "
 
 leo run agree "{
-  owner: aleo1c45etea8czkyscyqawxs7auqjz08daaagp2zq4qjydkhxt997q9s77rsp2.private,
+  owner: aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t.private,
   pid: 2264670486490520844857553240576860973319410481267184439818180411609250173817field.private,
   _nonce: 1738483341280375163846743812193292672860569105378494043894154684192972730518group.public
 }"
@@ -141,20 +141,20 @@ Let's create a new private ticket for voter 2. Take on the role of voter 1 and r
 
 echo '
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
+PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
 ' > .env
 
-leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
+leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg
 "
 
 # Swap in the private key of voter 2 to .env.
 echo "
 NETWORK=testnet3
-PRIVATE_KEY=APrivateKey1zkp6NHwbT7PkpnEFeBidz5ZkZ14W8WXZmJ6kjKbEHYdMmf2
+PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
 " > .env
 
 # Run the new_ticket transition function with unique id and voter address as inputs.
-leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc
+leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg
 
 echo "
 ###############################################################################
@@ -174,14 +174,14 @@ echo "
 Voter 2 can now vote privately on their ticket. Call the agree or disagree transition function, which takes the voter's ticket output as the input.
 
 leo run disagree '{
-  owner: aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc.private,
+  owner: aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg.private,
   pid: 2158670485494560943857353240576760973319410481267184429818180411607250143681field.private,
   _nonce: 6511154004161574129036815174288926693337549214513234790975047364416273541105group.public
 }'
 "
 
 leo run disagree "{
-  owner: aleo1uc6jphye8y9gfqtezrz240ak963sdgugd7s96qpuw6k7jz9axs8q2qnhxc.private,
+  owner: aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg.private,
   pid: 2158670485494560943857353240576760973319410481267184429818180411607250143681field.private,
   _nonce: 6511154004161574129036815174288926693337549214513234790975047364416273541105group.public
 }"
