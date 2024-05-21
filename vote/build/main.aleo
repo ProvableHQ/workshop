@@ -34,6 +34,7 @@ mapping disagree_votes:
 	key as field.public;
 	value as u64.public;
 
+
 function propose:
     input r0 as ProposalInfo.public;
     assert.eq self.caller r0.proposer;
@@ -46,6 +47,8 @@ function propose:
 finalize propose:
     input r0 as field.public;
     set 0u64 into tickets[r0];
+
+
 
 
 function new_ticket:
@@ -63,6 +66,8 @@ finalize new_ticket:
     set r2 into tickets[r0];
 
 
+
+
 function agree:
     input r0 as Ticket.record;
     async agree r0.pid into r1;
@@ -75,6 +80,8 @@ finalize agree:
     set r2 into agree_votes[r0];
 
 
+
+
 function disagree:
     input r0 as Ticket.record;
     async disagree r0.pid into r1;
@@ -85,3 +92,4 @@ finalize disagree:
     get.or_use disagree_votes[r0] 0u64 into r1;
     add r1 1u64 into r2;
     set r2 into disagree_votes[r0];
+

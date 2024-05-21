@@ -1,4 +1,3 @@
-// The `program` scope defines the data types, functions, and state associated with the `tictactoe` program.
 program tictactoe.aleo {
     // A row in a tic tac toe board.
     // - `c1` : The first entry in the row.
@@ -38,9 +37,9 @@ program tictactoe.aleo {
         return
             (b.r1.c1 == p && b.r1.c2 == p && b.r1.c3 == p) || // row 1
             (b.r2.c1 == p && b.r2.c2 == p && b.r2.c3 == p) || // row 2
-            (b.r3.c1 == p && b.r3.c3 == p && b.r3.c3 == p) || // row 3
+            (b.r3.c1 == p && b.r3.c2 == p && b.r3.c3 == p) || // row 3
             (b.r1.c1 == p && b.r2.c1 == p && b.r3.c1 == p) || // column 1
-            (b.r1.c2 == p && b.r2.c3 == p && b.r3.c2 == p) || // column 2
+            (b.r1.c2 == p && b.r2.c2 == p && b.r3.c2 == p) || // column 2
             (b.r1.c3 == p && b.r2.c3 == p && b.r3.c3 == p) || // column 3
             (b.r1.c1 == p && b.r2.c2 == p && b.r3.c3 == p) || // diagonal
             (b.r1.c3 == p && b.r2.c2 == p && b.r3.c1 == p); // other diagonal
@@ -109,5 +108,4 @@ program tictactoe.aleo {
             return (updated, 0u8);
         }
     }
-
 }
