@@ -4,20 +4,20 @@
   "description": "",
   "license": "MIT",
   "dependencies" : [
-    {
-      "name": "board.aleo",
-      "location": "local",
-      "path": "board"
-    },
-    {
-      "name": "move.aleo",
-      "location": "local",
-      "path": "move"
-    },
-    {
-      "name": "verify.aleo",
-      "location": "local",
-      "path": "verify"
-    }
+      {
+          "name": "board.aleo",
+          "location": "local",
+          "path": "board"
+      },
+      {
+          "name": "move.aleo",
+          "location": "local",
+          "path": "move"
+      },
+      {
+          "name": "verify.aleo",
+          "location": "local",
+          "path": "verify"
+      }
   ]
 }
