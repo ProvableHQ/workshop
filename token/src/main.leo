@@ -10,6 +10,25 @@ program token.aleo {
         amount: u64,
     }
 
+    /* Burn */
+    transition burn_public(public receiver: address, public amount_to_burn: u64) {
+      return then finalize(receiver, amount_to_burn);
+    }
+    
+    finalize burn_public(public owner: address, amount_to_burn: u64) {
+      let amount: u64 = Mapping::get_or_use(account, owner, 0u64);
+      Mapping::set(account, owner, amount - amount_to_burn);
+    }
+
+    transition burn_private(token_to_burn: token, amount: u64) -> token {
+      let difference: u64 = token_to_burn.amount - amount;
+      return token {
+        owner: token_to_burn.owner,
+        amount: difference,
+      };
+    }
+
+
     /* Mint */
 
     // The function `mint_public` issues the specified token amount for the token receiver publicly on the network.
