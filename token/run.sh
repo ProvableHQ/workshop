@@ -22,16 +22,18 @@ echo "
 Let's play Alice. Swap in her private key and publicly mint 100 tokens.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run mint_public aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px 100u64
 "
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run mint_public aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px 100u64
@@ -68,16 +70,18 @@ echo "
 Now let's privately mint 100 tokens for Bob. Switch to Bob's private key and privately mint 100 tokens for Bob.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run mint_private aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 100u64
 "
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run mint_private aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 100u64
@@ -114,16 +118,18 @@ echo "
 Let's publicly transfer 10 tokens from Alice to Bob. Swap the private key back to Alice and call the public transfer transition.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run transfer_public aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 10u64
 " 
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run transfer_public aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 10u64
@@ -160,8 +166,9 @@ echo "
 Let's privately transfer 20 tokens from Bob to Alice. Switch to Bob's private key and call the private transfer transition.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run transfer_private '{
@@ -172,8 +179,9 @@ leo run transfer_private '{
 "
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run transfer_private "{
@@ -214,16 +222,18 @@ echo "
 Let's convert 30 of Alice's public tokens into 30 private tokens for Bob. Switch the private key back to Alice.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run transfer_public_to_private aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 30u64
 "
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run transfer_public_to_private aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 30u64
@@ -261,8 +271,9 @@ echo "
 Let's convert 40 of Bob's private tokens into 40 public tokens for Alice. Switch the private key back to Bob.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run transfer_private_to_public '{
@@ -273,8 +284,9 @@ leo run transfer_private_to_public '{
 "
 
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run transfer_private_to_public "{

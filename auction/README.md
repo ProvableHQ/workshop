@@ -81,8 +81,9 @@ Swap in the private key and address of the first bidder to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 ```
 
@@ -100,8 +101,9 @@ Swap in the private key of the second bidder to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 ```
 
@@ -119,8 +121,9 @@ Swap in the private key of the auctioneer to `.env`.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 ```
 

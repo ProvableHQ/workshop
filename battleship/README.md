@@ -69,8 +69,9 @@ With Player 1's private key, they initialize the board with the placement of 4 s
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run initialize_board 34084860461056u64 551911718912u64 7u64 1157425104234217472u64 aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
@@ -156,8 +157,9 @@ We switch our .env to Player 2's private key and similarly run initialize_board 
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run initialize_board 31u64 2207646875648u64 224u64 9042383626829824u64 aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px
@@ -248,8 +250,9 @@ We switch the .env back to Player 1, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run play "{
@@ -304,8 +307,9 @@ We switch the .env back to Player 2, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run play "{
@@ -365,8 +369,9 @@ We switch the .env back to Player 1, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run play "{
@@ -433,8 +438,9 @@ We switch the .env back to Player 2, and we run the transition function play.
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run play "{

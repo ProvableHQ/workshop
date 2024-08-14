@@ -22,8 +22,9 @@ echo "
 Let's make some bank transactions. We'll take the role of the bank and issue 100 tokens to the user. We swap the private key into .env and run the issue transition function. The inputs are simply the recipient of the issuance and the amount.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run issue aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 100u64
@@ -31,8 +32,9 @@ leo run issue aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 10
 
 # Swap in the private key of the bank to .env.
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # Have the bank issue 100 tokens to the user.
@@ -83,8 +85,9 @@ echo "
 Now, let's have the user deposit 50 of their tokens with the bank. We'll take the role of the user and call the deposit function, having the user use the output record that was issued to them by the bank. The inputs are the output record from the issue transition and the amount the user wishes to deposit.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run deposit '{
@@ -96,8 +99,9 @@ leo run deposit '{
 
 # Swap in the private key of the user to .env.
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # Have the user deposit 50 tokens into the bank.
@@ -199,8 +203,9 @@ echo "
 Now, let's have the bank withdraw all tokens after 15 periods. Let's switch to the bank role, and call the withdraw transition function. The inputs are the recipient's address, amount, rate, and periods.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run withdraw aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t 50u64 1234u64 15u64
@@ -208,8 +213,9 @@ leo run withdraw aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
 "
 # Swap in the private key of the bank to .env.
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # Have the bank withdraw all of the user's tokens with compound interest over 15 periods at 12.34%.
