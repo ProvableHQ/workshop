@@ -26,8 +26,9 @@ echo "
 Let's propose a new ballot. Take on the role of the proposer and run the propose transition function. We've provided the necessary information as inputs to the propose function.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run propose '{ 
@@ -39,8 +40,9 @@ leo run propose '{
 
 # swaps in the private key of the proposer to .env
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # runs the propose transition function with proposal info as the input
@@ -72,8 +74,9 @@ echo "
 Let's create a new private ticket to make a vote. Take on the role of voter 1 and run the new_ticket transition. The inputs take a unique ticket ID and the voter's public address.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
@@ -81,8 +84,9 @@ leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180
 
 # Swap in the private key of voter 1 to .env.
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # Runs the new_ticket transition function with unique id and voter address as inputs.
@@ -140,8 +144,9 @@ echo "
 Let's create a new private ticket for voter 2. Take on the role of voter 1 and run the new_ticket transition. The inputs take a unique ticket ID and the voter's public address.
 
 echo '
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
+ENDPOINT=https://api.explorer.aleo.org/v1
 ' > .env
 
 leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg
@@ -149,8 +154,9 @@ leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180
 
 # Swap in the private key of voter 2 to .env.
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 # Run the new_ticket transition function with unique id and voter address as inputs.

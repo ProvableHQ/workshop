@@ -72,8 +72,9 @@ Let's propose a new ballot. Take on the role of the proposer and run the propose
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run propose "{ 
@@ -91,8 +92,9 @@ Let's create a new private ticket to make a vote. Take on the role of voter 1 an
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2RWGDcde3efb89rjhME1VYA8QMxcxep5DShNBR6n8Yjh
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run new_ticket 2264670486490520844857553240576860973319410481267184439818180411609250173817field aleo1s3ws5tra87fjycnjrwsjcrnw2qxr8jfqqdugnf0xzqqw29q9m5pqem2u4t
@@ -116,8 +118,9 @@ Let's create a new private ticket for voter 2. Take on the role of voter 1 and r
 
 ```bash
 echo "
-NETWORK=testnet3
+NETWORK=testnet
 PRIVATE_KEY=APrivateKey1zkp2GUmKbVsuc1NSj28pa1WTQuZaK5f1DQJAT6vPcHyWokG
+ENDPOINT=https://api.explorer.aleo.org/v1
 " > .env
 
 leo run new_ticket 2158670485494560943857353240576760973319410481267184429818180411607250143681field aleo1ashyu96tjwe63u0gtnnv8z5lhapdu4l5pjsl2kha7fv7hvz2eqxs5dz0rg
