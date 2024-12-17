@@ -1,0 +1,20 @@
+{
+  "program": "timelocked_credits.aleo",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "dependencies": [
+    {
+      "name": "credits.aleo",
+      "location": "network",
+      "network": "testnet",
+      "path": null
+    },
+    {
+      "name": "access_control.aleo",
+      "location": "local",
+      "network": null,
+      "path": "../access_control"
+    }
+  ]
+}
